@@ -1,0 +1,16 @@
+Name
+Date of birth
+Email
+phone number
+Password
+Occupation
+Aadhar card number
+Address
+       House number
+       street number
+       city
+       state
+       pin
+
+#8fcfd1
+#dcf5fc

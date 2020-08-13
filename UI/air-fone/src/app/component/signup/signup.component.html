@@ -1,0 +1,76 @@
+<app-menu></app-menu>
+<div class="container">
+    <h1>Registeration Form</h1>
+    <br><br><br>
+    <br><br><br> 
+    <form [formGroup]="registerForm" (ngSubmit)="onsubmit()" >
+      
+    <div class="form-group" >
+      <label for="CName">First Name</label>
+      <input type="text" class="form-control"  name="fusername" formControlName="CName" placeholder="Enter CName" >
+        
+      <span *ngIf="!registerForm.get('CName').valid && registerForm.get('CName').touched || registerForm.get('CName').dirty " class="help-block" >Please enter username!!</span>
+    </div>    
+    <div class="form-group" >
+      <label for="DOB">Date of birth</label>
+      <input type="text" class="form-control"  name="DOB" formControlName="DOB" placeholder="Enter the Date of Birth">
+    
+      <span *ngIf="!registerForm.get('DOB').valid && registerForm.get('DOB').touched || registerForm.get('DOB').dirty " class="help-block" >Please enter valid Date of birth!!</span>
+    </div>
+    <div class="form-group" >
+      <label for="Email">Email</label>
+      <input type="text" class="form-control"  name="Email" formControlName="Email" placeholder="Enter Email">
+      
+      <span *ngIf="!registerForm.get('Email').valid && registerForm.get('Email').touched || registerForm.get('Email').dirty" class="help-block" >Please enter a valid Email!!</span>
+    </div>
+    <div class="form-group" >
+      <label for="password">Password</label>
+      <input type="password" class="form-control"  name="Pwd" formControlName="Pwd" placeholder="Enter Password">
+      <span *ngIf="!registerForm.get('Pwd').valid && registerForm.get('Pwd').touched || registerForm.get('Pwd').dirty" class="help-block" >Please enter a valid Password!!</span>
+    </div>
+    
+    <div class="form-group" >
+    <label for="AadharNumber">AadharNumber Number</label>
+    <input type="text" class="form-control"  name="AadharNumber" formControlName="AadharNumber" placeholder="Enter AadharNumber Number" >
+    
+    <span *ngIf="!registerForm.get('AadharNumber').valid && registerForm.get('AadharNumber').touched || registerForm.get('AadharNumber').dirty" class="help-block" >Please enter a valid AadharNumber Number!!</span>
+    </div>
+    <div class="form-group" >
+    <label for="Occupation">Occupation</label>
+    <input type="text" class="form-control"  name="Occupation" formControlName="Occupation" placeholder="Occupation">
+    
+    <span *ngIf="!registerForm.get('Occupation').valid && registerForm.get('Occupation').touched || registerForm.get('Occupation').dirty" class="help-block" >Please enter a valid Occupation!!</span>
+    </div>
+    <div class="form-group" >
+      <label for="Houseno">House number</label>
+      <input type="text" class="form-control"  name="Houseno" formControlName="Houseno" placeholder="Enter House no">
+    
+      <span *ngIf="!registerForm.get('Houseno').valid && registerForm.get('Houseno').touched || registerForm.get('Houseno').dirty" class="help-block" >Enter your City</span>
+    </div>
+    <div class="form-group" >
+       <label for="Street">Street</label>
+       <input type="text" class="form-control"  name="Street" formControlName="Street" placeholder="Enter Your Street">
+   
+        <span *ngIf="!registerForm.get('Street').valid && registerForm.get('Street').touched || registerForm.get('Street').dirty" class="help-block" >Enter your Street</span>
+      </div>
+      <div class="form-group" >
+        <label for="City">City</label>
+        <input type="text" class="form-control"  name="City" formControlName="City" placeholder="Enter Your City">
+   
+        <span *ngIf="!registerForm.get('City').valid && registerForm.get('City').touched || registerForm.get('City').dirty" class="help-block" >Enter your City</span>
+      </div>
+      <div class="form-group" >
+        <label for="State">State</label>
+        <input type="text" class="form-control"  name="State" formControlName="State" placeholder="Enter Your State">
+    
+        <span *ngIf="!registerForm.get('State').valid && registerForm.get('State').touched || registerForm.get('State').dirty" class="help-block" >Enter your State</span>
+      </div>
+      <div class="form-group" >
+        <label for="pincode">Pincode</label>
+        <input type="text" class="form-control"  name="pincode" formControlName="pincode" placeholder="Enter Your pincode">
+   
+        <span *ngIf="!registerForm.get('pincode').valid && registerForm.get('pincode').touched || registerForm.get('pincode').dirty" class="help-block" >Enter your pincode</span>
+      </div>
+      <input type="button" class="form-submit" value="Submit">
+    </form>  
+</div>

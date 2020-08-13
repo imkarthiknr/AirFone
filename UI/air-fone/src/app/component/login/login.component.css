@@ -1,0 +1,129 @@
+body{
+    background-color: #f5f1da;
+    height: 720px;
+}
+
+span{
+    font-size: small;
+    margin-left: 163px;
+    color: red;
+}
+
+.container {
+    margin-top: 50px;
+    width: 900px;
+    height: 500px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -o-border-radius: 20px;
+    -ms-border-radius: 20px; }
+
+h1{
+    text-align: center;
+}
+
+.signin-content {
+    margin-top: 100px;
+    padding-top: 30px;
+    padding-bottom: 67px; }
+      
+.signin-form {
+    margin-top: 0px;
+    margin-right: 90px;
+    margin-left: 80px; }
+
+.signin-content {
+    display: flex;
+}
+
+.signin-form, .signin-image {
+    width: 100%;
+    overflow: hidden; 
+}
+
+.form-submit {
+    display: inline-block;
+    margin-left: 160px;
+    background: #8fcfd1;
+    color: #fff;
+    border-bottom: none;
+    width: auto;
+    padding: 15px 39px;
+    border-radius: 25px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    margin-top: 25px;
+    cursor: pointer; }
+    .form-submit:hover {
+      background: #4292dc; }
+  
+  #signin {
+    margin-top: 16px; }
+  
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden; }
+    .form-group:last-child {
+      margin-bottom: 0px; }
+  
+  input {
+    margin-left: 20px;
+    width: 50%;
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 6px 30px;
+    font-family: Poppins;
+    box-sizing: border-box; 
+  }
+
+  input[type=password] {
+    margin-left: 63px;
+  }
+
+
+  #login-form{
+      width: 100;
+  }
+
+  /*.form-button{
+      margin-left: 120px;
+  }*/
+
+  
+  input[type=submit] {
+    
+    display: inline-block;
+    background: #8fcfd1;
+    color: #fff;
+    border-bottom: none;
+    width: auto;
+    padding: 15px 39px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    margin-top: 25px;
+    cursor: pointer; }
+
+
+label{
+    margin-left: 30px;
+}
+
+.forget-password{
+    margin-left: 163px;
+}
