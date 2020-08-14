@@ -16,8 +16,6 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AdsComponent } from './component/ads/ads.component';
 import { CustDetailComponent } from './component/cust-detail/cust-detail.component';
 import { Component } from '@angular/core';
-import { SignupComponent } from './component/signup/signup.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +27,7 @@ import { SignupComponent } from './component/signup/signup.component';
     HeaderComponent,
     DashboardComponent,
     AdsComponent,
-    CustDetailComponent,
-    SignupComponent
+    CustDetailComponent
   ],
   imports: [
     BrowserModule,

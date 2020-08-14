@@ -10,47 +10,39 @@ import { Router } from '@angular/router';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
-})
+  //template: `<p>Hello</p>`
+}) 
 export class RegisterComponent implements OnInit{
   registerForm : FormGroup;
  
-  constructor(private custService: CustomerService,private Http: HttpClient,private router:Router ) {}
+  constructor(private custService: CustomerService,private Http: HttpClient,private router:Router ) {
+        
+ 
+  }
   ngOnInit(): void
   {
-    
     this.registerForm=new FormGroup({
       
-      'Cname':new FormControl(null,Validators.required),
-      'DOB':new FormControl(null,Validators.required),
-      'Email': new FormControl(null,[Validators.required,Validators.email]),
-      'Pwd': new FormControl(null,[Validators.required,Validators.minLength(4)]),
-      'AdhaarNumber':new FormControl(null,[Validators.required,Validators.pattern(/^\d{12}$/)]),
-      'Occupation': new FormControl(null,[Validators.required]),
-      'Houseno': new FormControl(null,[Validators.required]),
-      'Street':new FormControl(null,[Validators.required]),
-      'City': new FormControl(null,[Validators.required]),
-      'State': new FormControl(null,[Validators.required]),
-      'pincode': new FormControl(null,[Validators.required]),     
+      Cname:new FormControl(null,Validators.required),
+      DOB:new FormControl(null,Validators.required),
+      Email: new FormControl(null,[Validators.required,Validators.email]),
+      Pwd: new FormControl(null,[Validators.required,Validators.minLength(4)]),
+      AdhaarNumber:new FormControl(null,[Validators.required,Validators.pattern(/^\d{12}$/)]),
+      Occupation: new FormControl(null,[Validators.required]),
+      Houseno: new FormControl(null,[Validators.required]),
+      Street:new FormControl(null,[Validators.required]),
+      City: new FormControl(null,[Validators.required]),
+      State: new FormControl(null,[Validators.required]),
+      pincode: new FormControl(null,[Validators.required]),     
     });
   }
-  Cname = this.registerForm.get('Cname').value
-  DOB = this.registerForm.get('DOB').value
-  Email = this.registerForm.get('Email').value
-  Pwd = this.registerForm.get('Pwd').value
-  AdhaarNumber = this.registerForm.get('AdhaarNumber').value
-  Occupation = this.registerForm.get('Occupation').value
-  Houseno = this.registerForm.get('Houseno').value
-  Street = this.registerForm.get('Street').value
-  City = this.registerForm.get('City').value
-  State = this.registerForm.get('State').value
-  pincode = this.registerForm.get('pincode').value
 
    onsubmit()
    {
     if(this.registerForm.valid==true)
     {
       
-      this.custService.sendPostRequest(this.Cname,this.DOB,this.Email,this.Pwd,this.AdhaarNumber,this.Occupation,this.Houseno,this.Street,this.City,this.State,this.pincode)
+      this.custService.sendPostRequest(this.registerForm.get('Cname').value,this.registerForm.get('DOB').value,this.registerForm.get('Email').value,this.registerForm.get('Pwd').value,this.registerForm.get('AdhaarNumber').value,this.registerForm.get('Occupation').value,this.registerForm.get('Houseno').value,this.registerForm.get('Street').value,this.registerForm.get('City').value,this.registerForm.get('State').value,this.registerForm.get('pincode').value)
       .subscribe(response=>{
         console.log(response);
         let jsonObj = JSON.parse(JSON.stringify(response));
@@ -59,14 +51,12 @@ export class RegisterComponent implements OnInit{
         }
         this.router.navigate(['/dashboard']);
 
-  })
-    
-
+        })
+    }
+    else
+    {
+      alert("Enter All fields");
+     }
   }
-  else
-  {
-    alert("Enter All fields");
-  }
-}
 }
 

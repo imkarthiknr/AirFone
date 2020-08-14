@@ -1,4 +1,4 @@
-import { SignupComponent } from './component/signup/signup.component';
+
 import { CustDetailComponent } from './component/cust-detail/cust-detail.component';
 import { AdsComponent } from './component/ads/ads.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
@@ -17,7 +17,6 @@ const routes: Routes = [
   {path: 'Dashboard', component: DashboardComponent},
   {path: 'Login', component: LoginComponent},
   {path: 'Register', component: RegisterComponent},
-  {path: 'signup', component: SignupComponent},
 ];
  
 @NgModule({
