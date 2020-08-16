@@ -38,7 +38,9 @@ h1{
 .signin-form {
     margin-top: 0px;
     margin-right: 90px;
-    margin-left: 80px; }
+    margin-left: 80px;
+    background-color: #1258F2;
+ }
 
 .signin-content {
     display: flex;

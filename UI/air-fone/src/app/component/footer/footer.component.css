@@ -1,0 +1,24 @@
+.primary-color{
+    background-color: #1258F2;
+}
+
+.navbar-brand{
+    background-color: #2AABE4;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.img_class
+{
+    width: 50px;
+    height: 40px;
+}
+.copy
+{
+    text-align: center;
+    margin-left: 17%;
+}
+.contact
+{
+    margin-left:27%;
+}

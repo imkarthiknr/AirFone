@@ -15,10 +15,14 @@ import { HeaderComponent } from './component/header/header.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AdsComponent } from './component/ads/ads.component';
 import { CustDetailComponent } from './component/cust-detail/cust-detail.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+//import { CarouselModule } from '@bit/valor-software.ngx-bootstrap.carousel';
 import { Component } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BillComponent } from './component/bill/bill.component';
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent, 
     HomeComponent,
     MenuComponent,
     FooterComponent,
@@ -26,18 +30,20 @@ import { Component } from '@angular/core';
     RegisterComponent,
     HeaderComponent,
     DashboardComponent,
-    AdsComponent,
-    CustDetailComponent
+    AdsComponent, 
+    CustDetailComponent, BillComponent
   ],
-  imports: [
+  imports: [  
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    FormsModule, 
+    CarouselModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], 
+  bootstrap: [AppComponent,HomeComponent]
 })
 export class AppModule { }

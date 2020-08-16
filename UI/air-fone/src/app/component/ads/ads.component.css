@@ -1,0 +1,33 @@
+
+.img-main-carousel{
+    max-height:500px ;
+    
+}
+.img-box{
+    max-height: 100 px;
+    max-width: 100 px;
+}
+.how-section1{
+    margin-top:-15%;
+    padding: 10%;
+}
+.how-section1 h4{
+    color: #8fcfd1;
+    font-weight: bold;
+    font-size: 30px;
+}
+.how-section1 .subheading{
+    color: black;
+    font-size: 20px;
+}
+.how-section1 .row
+{
+    margin-top: 10%;
+}
+.how-img 
+{
+    text-align: center;
+}
+.how-img img{
+    width: 40%;
+}

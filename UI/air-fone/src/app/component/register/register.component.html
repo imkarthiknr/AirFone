@@ -1,79 +1,123 @@
-<p>Register works</p>
-<app-menu></app-menu>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
-<div>
-      <h1>Registeration Form</h1>
-      <br><br><br>
-      <br><br><br> 
-      <form [formGroup]="registerForm" (ngSubmit)="onsubmit()" >
-        
-      <div class="form-group" >
-        <label for="CName">First Name</label>
-        <input type="text" class="form-control"  name="CName" formControlName="CName" placeholder="Enter CName" >
-          
-        <span *ngIf="!registerForm.get('CName').valid && registerForm.get('CName').touched || registerForm.get('CName').dirty " class="help-block" >Please enter username!!</span>
-      </div>    
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<body>
+<div class="container">
+            <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onsubmit()" role="form">
+                <h2>Registration</h2>
+                <div class="form-group">
+                    <label for="CName" class="col-sm-3 control-label">First Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="CName" name="CName" placeholder="First Name" class="form-control" formControlname="CName" autofocus>
+                        <span *ngIf="!registerForm.get('CName').valid && registerForm.get('CName').touched || registerForm.get('CName').dirty " class="help-block" >Please enter username!!</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="DOB" class="col-sm-3 control-label">Date of Birth*</label>
+                  <div class="col-sm-9">
+                      <input type="text" id="DOB" name="DOB" placeholder="Date of Birth" class="form-control" formControlname="DOB">
+                      <span *ngIf="!registerForm.get('DOB').valid && registerForm.get('DOB').touched || registerForm.get('DOB').dirty " class="help-block" >Please enter valid Date of birth!!</span>
+                  </div>
+              </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">Email* </label>
+                    <div class="col-sm-9">
+                        <input type="text" id="email" placeholder="Email" class="form-control" name= "email" formControlname="email">
+                        <span *ngIf="!registerForm.get('Email').valid && registerForm.get('Email').touched || registerForm.get('Email').dirty" class="help-block" >Please enter a valid Email!!</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">Password*</label>
+                    <div class="col-sm-9">
+                        <input type="password" id="password" name="Pwd" placeholder="Password" class="form-control" formControlname="Pwd">
+                        <span *ngIf="!registerForm.get('Pwd').valid && registerForm.get('Pwd').touched || registerForm.get('Pwd').dirty" class="help-block" >Please enter a valid Password!!</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="AadharNumber" class="col-sm-3 control-label">AadharNumber</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="AadharNumber" name="AadharNumber" placeholder="Aadhar Number" class="form-control" formControlname="AadharNumber">
+                        <span *ngIf="!registerForm.get('AadharNumber').valid && registerForm.get('AadharNumber').touched || registerForm.get('AadharNumber').dirty" class="help-block" 	>Please enter a valid AadharNumber Number!!</span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="Occupation" class="col-sm-3 control-label">Occupation </label>
+                    <div class="col-sm-9">
+                        <input type="text" id="Occupation" name="Occupation" placeholder="Occupation" class="form-control" formControlname="Occupation">
+                        <span *ngIf="!registerForm.get('Occupation').valid && registerForm.get('Occupation').touched || registerForm.get('Occupation').dirty" class="help-block">Please enter a valid Occupation!!</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                        <label for="Houseno" class="col-sm-3 control-label">Housenumber </label>
+                    <div class="col-sm-9">
+                        <input type="text" id="Houseno" name="Houseno" placeholder="House number" class="form-control" formControlname="Houseno">
+                        <span *ngIf="!registerForm.get('Houseno').valid && registerForm.get('Houseno').touched || registerForm.get('Houseno').dirty" class="help-block" >Enter your Housenumber</span>
+                    </div>
+                </div>
+                 <div class="form-group">
+                        <label for="Street" class="col-sm-3 control-label">Street</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="weight" name="Street" placeholder="Street" class="form-control" formControlname="Street">
+                        <span *ngIf="!registerForm.get('Street').valid && registerForm.get('Street').touched || registerForm.get('Street').dirty" class="help-block" >Enter your Street</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="City" class="col-sm-3 control-label">City</label>
+              <div class="col-sm-9">
+                  <input type="text" id="weight" name="City" placeholder="City" class="form-control" formControlname="City">
+                  <span *ngIf="!registerForm.get('City').valid && registerForm.get('City').touched || registerForm.get('City').dirty" class="help-block" >Enter your City</span>
+              </div>
+                 </div>
+               <div class="form-group">
+                 <label for="State" class="col-sm-3 control-label">State</label>
+                 <div class="col-sm-9">
+                 <input type="State" id="weight" name="State" placeholder="State" class="form-control" formControlname="State">
+                 <span *ngIf="!registerForm.get('State').valid && registerForm.get('State').touched || registerForm.get('State').dirty" class="help-block" >Enter your State</span>
+              </div>
+            </div>
+        <div class="form-group">
+            <label for="pincode" class="col-sm-3 control-label">Pincode</label>
+            <div class="col-sm-9">
+                <input type="text" id="pincode" name="pincode" placeholder="pincode" class="form-control" formControlname="pincode">
+                <span *ngIf="!registerForm.get('pincode').valid && registerForm.get('pincode').touched || registerForm.get('pincode').dirty" class="help-block" >Enter your pincode</span>
+            </div>
+        </div>
 
-      <div class="form-group" >
-        <label for="DOB">Date of birth</label>
-        <input type="text" class="form-control"  name="DOB" formControlName="DOB" placeholder="Enter the Date of Birth">
-      
-        <span *ngIf="!registerForm.get('DOB').valid && registerForm.get('DOB').touched || registerForm.get('DOB').dirty " class="help-block" >Please enter valid Date of birth!!</span>
-      </div>
-      <div class="form-group" >
-        <label for="Email">Email</label>
-        <input type="text" class="form-control"  name="Email" formControlName="Email" placeholder="Enter Email">
-        
-        <span *ngIf="!registerForm.get('Email').valid && registerForm.get('Email').touched || registerForm.get('Email').dirty" class="help-block" >Please enter a valid Email!!</span>
-      </div>
-      <div class="form-group" >
-        <label for="password">Password</label>
-        <input type="password" class="form-control"  name="Pwd" formControlName="Pwd" placeholder="Enter Password">
-        <span *ngIf="!registerForm.get('Pwd').valid && registerForm.get('Pwd').touched || registerForm.get('Pwd').dirty" class="help-block" >Please enter a valid Password!!</span>
-      </div>
-      
-      <div class="form-group" >
-      <label for="AadharNumber">AadharNumber Number</label>
-      <input type="text" class="form-control"  name="AadharNumber" formControlName="AadharNumber" placeholder="Enter AadharNumber Number" >
-      
-      <span *ngIf="!registerForm.get('AadharNumber').valid && registerForm.get('AadharNumber').touched || registerForm.get('AadharNumber').dirty" class="help-block" >Please enter a valid AadharNumber Number!!</span>
-      </div>
-      <div class="form-group" >
-      <label for="Occupation">Occupation</label>
-      <input type="text" class="form-control"  name="Occupation" formControlName="Occupation" placeholder="Occupation">
-      
-      <span *ngIf="!registerForm.get('Occupation').valid && registerForm.get('Occupation').touched || registerForm.get('Occupation').dirty" class="help-block" >Please enter a valid Occupation!!</span>
-      </div>
-      <div class="form-group" >
-        <label for="Houseno">House number</label>
-        <input type="text" class="form-control"  name="Houseno" formControlName="Houseno" placeholder="Enter House no">
-      
-        <span *ngIf="!registerForm.get('Houseno').valid && registerForm.get('Houseno').touched || registerForm.get('Houseno').dirty" class="help-block" >Enter your City</span>
-      </div>
-      <div class="form-group" >
-        <label for="Street">Street</label>
-        <input type="text" class="form-control"  name="Street" formControlName="Street" placeholder="Enter Your Street">
-    
-          <span *ngIf="!registerForm.get('Street').valid && registerForm.get('Street').touched || registerForm.get('Street').dirty" class="help-block" >Enter your Street</span>
-        </div>
-        <div class="form-group" >
-          <label for="City">City</label>
-          <input type="text" class="form-control"  name="City" formControlName="City" placeholder="Enter Your City">
-    
-          <span *ngIf="!registerForm.get('City').valid && registerForm.get('City').touched || registerForm.get('City').dirty" class="help-block" >Enter your City</span>
-        </div>
-        <div class="form-group" >
-          <label for="State">State</label>
-          <input type="text" class="form-control"  name="State" formControlName="State" placeholder="Enter Your State">
-      
-          <span *ngIf="!registerForm.get('State').valid && registerForm.get('State').touched || registerForm.get('State').dirty" class="help-block" >Enter your State</span>
-        </div>
-        <div class="form-group" >
-          <label for="pincode">Pincode</label>
-          <input type="text" class="form-control"  name="pincode" formControlName="pincode" placeholder="Enter Your pincode">
-    
-          <span *ngIf="!registerForm.get('pincode').valid && registerForm.get('pincode').touched || registerForm.get('pincode').dirty" class="help-block" >Enter your pincode</span>
-        </div>
-        <input type="button" class="form-submit" value="Submit">
-      </form>  
-</div>
+        <div class="form-group">
+            <label class="control-label col-sm-3" name="Type_Cust">Enter the Type of Customer</label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="Pre-paid" value="Pre-paid" formControlname="Pre-paid">Prepaid
+                                </label><br>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="Post-paid" value="Post-paid" formControlname="Post-paid">Postpaid
+                                </label><br>
+                            </div>
+                            <div class="col-sm-4">
+                              <label class="radio-inline">
+                                  <input type="radio" id="Broadband" value="Broadband" formControlname="Broadband">Broadband
+                              </label><br>
+                          </div>
+                        </div>
+                    </div>
+                </div> <!-- /.form-group -->
+                <div>
+                    <div class="col-sm-9 col-sm-offset-3">
+                        <span class="help-block">*Required fields</span>
+                    </div>
+                </div>
+                <button (click)="onsubmit()" class="btn btn-primary btn-block">Register</button>
+            </form> <!-- /form -->
+        </div> <!-- ./container -->
+      </body>

@@ -1,0 +1,30 @@
+<body>
+    <div class="container">
+        <div class="signin-content">
+        <div class="signin-form">
+            <form>
+                <div class="form-group">
+                    <h1>Recharge</h1>
+                    <br>
+                </div>
+                
+                <label>Enter phone number</label>
+                <input type="text" placeholder="Enter registered phone number" name="phno" [(ngModel)]="phno">
+                <br>
+                <br>
+                <label>Enter your plan</label>
+                <input class="name" type="text" placeholder="Enter amount from the plan" name="plan" [(ngModel)]="plan">
+                <br>
+                <br>
+                <label>Enter the type of customer</label>
+                <input class="text" placeholder="Choose prepaid/postpaid/broadband" name="description" [(ngModel)]="description">
+                <br><br>
+                <div class="form-group form-button">
+                    <button class="form-submit" name="submit" (click)="recharge()">Submit</button>
+                </div>
+            </form>
+    
+        </div>
+        </div>
+    </div>
+    </body>

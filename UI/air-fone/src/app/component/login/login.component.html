@@ -1,15 +1,16 @@
 <app-menu></app-menu>
 
-<div class="container">
+    <div class="container">
     <div class="signin-content">
     <div class="signin-form">
     <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
         <div class="form-group">
-            <h1>Login</h1>
+            <h1>LOGIN</h1>
             <br>
             <br>
-            <label for="Mobile_number">Mobile Number:</label>
-            <input type="text" [(ngModel)]="mobnumber" formControlName="m_number" placeholder="Enter Mobile Number"/>
+            
+            <label for="Mobile_number">MOBILE NUMBER:</label>
+            <input type="text" formControlName="m_number" placeholder="Enter Mobile Number"/>
             <br>
             <br>
             <span *ngIf="!loginform.get('m_number').value
@@ -18,8 +19,8 @@
         </div>
         <br>
         <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" [(ngModel)]="password" formControlName="u_password" placeholder="Password"/>
+            <label for="password">PASSWORD:</label>
+            <input type="password" formControlName="u_password" placeholder="Password"/>
             <br><br>
             <div class="forget-password">
                 <a routerLink="#" routerLinkActive="active">Forgot Password?</a>
@@ -31,10 +32,15 @@
         
        
         <div class="form-group form-button">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="submit" class="form-submit" value="Submit">
         </div>
+        <br>
+        <br>
         
     </form>
     </div>
 </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br>
+<app-footer></app-footer>

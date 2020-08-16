@@ -1,0 +1,71 @@
+import requests
+from flask import Flask, request, jsonify, redirect
+from flask_restful import Resource, Api
+from flaskext.mysql import MySQL
+import datetime
+
+current_date = datetime.datetime.now()
+mysql = MySQL()
+app = Flask(__name__)
+url = "https://www.fast2sms.com/dev/bulk"
+
+mysql.init_app(app)
+port = 4004
+
+# MySQL configurations
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+app.config['MYSQL_DATABASE_DB'] = 'airfone'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+api = Api(app)
+
+class SMS(Resource):
+    def get(self,start_date,end_date):
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        select_query = "select * from smsdemo where  start_date = %s and end_date = %s"
+        query = (start_date,end_date,)
+        cursor.execute(select_query,query)
+        rows = cursor.fetchall()
+        print(rows)
+        current_date = datetime.datetime.now()
+        today_date = current_date.date()
+        listrows = list(rows)
+        n = listrows
+        if len(rows) > 0:
+            #resp = jsonify(rows)
+            for i in range (0,len(n)):
+                name = listrows[i][0]
+                number = listrows[i][1]
+                start_date = listrows[i][2]
+                end_date = listrows[i][3]
+                print(start_date)
+                print(end_date)
+                if today_date == start_date:
+                    querystring = {
+                        "authorization": "eX9icbPK83NpojTLtrS0QlxdUwvWEHCYM2y4mnAJfhg5VDR7IBbisqxnGEZYLB80TptVcWDueP53FNKI",
+                        "sender_id": "FSTSMS",
+                        "message": "Hi "+name, "language": "english", "route": "p",
+                        "numbers": number
+                    }
+                    headers = { 'cache-control': "no-cache" }
+                    response = requests.request("GET", url, headers=headers, params=querystring)
+                    print(response.text)
+            return {"Date" : "Correct"}, 203
+
+        return {'Login': 'Failed'}, 404
+
+
+
+#querystring = {"authorization":"eX9icbPK83NpojTLtrS0QlxdUwvWEHCYM2y4mnAJfhg5VDR7IBbisqxnGEZYLB80TptVcWDueP53FNKI","sender_id":"FSTSMS","message":"Hi this is karthik","language":"english","route":"p","numbers":"7397264570,8939828209,9043618661"}
+
+'''headers = {
+    'cache-control': "no-cache"
+}'''
+
+#response = requests.request("GET", url, headers=headers, params=querystring)
+
+#print(response.text)
+
+api.add_resource(SMS, '/sms/<string:start_date>/<string:end_date>')
+app.run(port=port, debug=True)
