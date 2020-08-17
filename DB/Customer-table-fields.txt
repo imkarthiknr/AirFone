@@ -11,6 +11,7 @@ Address
        city
        state
        pin
+custtype
 
 #8fcfd1
 #dcf5fc
