@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Admin Profile</h1>
+    <br>
+    <form *ngFor="let admin of admindetail" [formGroup]="adminform" (ngSubmit)="onSubmit()">
+        <div class="contain">
+        <label>Admin Id</label>
+        <input type="text" [(ngModel)]=admin.adminid formControlName="adminid" disabled="disabled">
+        <br><br>
+        <label>User Name:</label>
+        <input type="text" formControlName="auname" [(ngModel)]=admin.auname>
+        <br>
+        <br>
+        <label>Password:</label>
+        <input type="text" [(ngModel)]=admin.apassword formControlName="apassword">
+        <br>
+        <br>
+    </div>
+    
+    <div>
+
+        <input class="btn btn-primary" type="Submit" value="Update">
+    </div>
+       
+    
+    </form>
+</body>
+</html>
+
+   
+

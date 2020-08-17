@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+    
+    <form class="form-body" *ngFor="let user of users" [formGroup]="updateform">
+        <div class="container">
+        <h1>Update User Data</h1>
+        <div class="form-group">
+        <label>MobileNo:</label>
+        <input class="input-xlarge" type="text"  [(ngModel)]=user.mobileno name="mno" formControlName="mno">
+        </div>
+        <div class="form-group">
+        <label>Name:</label>
+        <input type="text" [(ngModel)]=user.uname name="uname" formControlName="uname">
+        </div>
+        <div class="form-group">
+        <label>Password:</label>
+        <input type="text"[(ngModel)]=user.upassword name="upassword" formControlName="upassword">
+        </div>
+        <div class="form-group">
+        <label>Customer Type:</label>
+        <input type="text" [(ngModel)]=user.typecust name="typecust" formControlName="typecust">
+        </div>
+        <input class="registerbtn" type="submit" value="Update" (click)="updatecustomer()">
+        </div>
+        
+    </form>
+    
+</body>
+</html>
+
+
+    
+
+
+
+

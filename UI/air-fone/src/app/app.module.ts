@@ -1,3 +1,8 @@
+import { AdmincomplaintService } from './service/admincomplaint.service';
+import { AdminprofileService } from './service/adminprofile.service';
+import { BillgenerationService } from './service/billgeneration.service';
+import { GetsingleuserService } from './service/getsingleuser.service';
+import { GetuserService } from './service/getuser.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +25,15 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BillComponent } from './component/bill/bill.component';
+import { CustomerdetailsComponent } from './component/customerdetails/customerdetails.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { AdmindashboardComponent } from './component/admindashboard/admindashboard.component';
+import { UpdatecustomerComponent } from './component/updatecustomer/updatecustomer.component';
+import { BillgenerationComponent } from './component/billgeneration/billgeneration.component';
+import { AdminprofileComponent } from './component/adminprofile/adminprofile.component';
+import { AdmincomplaintdetailsComponent } from './component/admincomplaintdetails/admincomplaintdetails.component';
+import { AdminrespondComponent } from './component/adminrespond/adminrespond.component';
+import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -31,7 +45,7 @@ import { BillComponent } from './component/bill/bill.component';
     HeaderComponent,
     DashboardComponent,
     AdsComponent, 
-    CustDetailComponent, BillComponent
+    CustDetailComponent, BillComponent, CustomerdetailsComponent, NavbarComponent, AdmindashboardComponent, UpdatecustomerComponent, BillgenerationComponent, AdminprofileComponent, AdmincomplaintdetailsComponent, AdminrespondComponent, AdminloginComponent
   ],
   imports: [  
     BrowserModule,
@@ -43,7 +57,7 @@ import { BillComponent } from './component/bill/bill.component';
     RouterModule,
     BrowserAnimationsModule
   ],
-  providers: [], 
+  providers: [AdminprofileService,GetuserService,GetsingleuserService,BillgenerationService,AdmincomplaintService], 
   bootstrap: [AppComponent,HomeComponent]
 })
 export class AppModule { }

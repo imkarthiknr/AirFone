@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<body>
+    <h1>Bill Generation</h1>
+    <form [formGroup]="billform" (ngSubmit)="onSubmit()">
+        <div class="contain">
+        <label>Start Date:</label>
+        <input type="text" formControlName="startdate">
+        <label>End Date:</label>
+        <input type="text" formControlName="enddate">
+        <br>
+        <br>
+    </div>
+    
+    <div>
+
+        <input class="btn btn-primary" type="submit">
+    </div>
+       
+    
+    </form>
+    <br><br>
+      <table [hidden]="isshow" class="table table-striped table-bordered table-responsive-md">
+        <tr>
+          <th>Bill Id</th>
+          <th>Mobile No</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Price</th>
+        </tr>
+        <tr *ngFor="let bill of billdetail">
+          <td>{{bill.bill_id}}</td>
+          <td>{{bill.mobileno}}</td>
+          <td>{{bill.uname}}</td>
+          <td>{{bill.email}}</td>
+          <td>{{bill.price}}</td>
+          
+          
+        </tr>
+      </table>
+</body>
+
+

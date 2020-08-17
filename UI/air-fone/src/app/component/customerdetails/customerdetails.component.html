@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<body>
+    <h1>Customer Details</h1>
+  <table class="table table-striped table-bordered table-responsive-md">
+    <tr>
+      <th>Mobile Number</th>
+      <th>Name</th>
+      <th>Password</th>
+      <th>Customer Type</th>
+      <th>Delete</th>
+      <th>Update</th>
+    </tr>
+    <tr *ngFor="let cust of users">
+      <td>{{cust.mobileno}}</td>
+      <td>{{cust.uname}}</td>
+      <td>{{cust.upassword}}</td>
+      <td>{{cust.typecust}}</td>
+      <td (click)="deletecustomer(cust.mobileno)"><a routerLink="/customerdetails" routerLinkActive="active">Delete</a></td>
+      <td [routerLink]="['/updatecustomer',cust.mobileno]"><a routerLink="" routerLinkActive="active">Update</a></td>
+      
+    </tr>
+  </table>
+  
+  
+  </body>
+  
+
