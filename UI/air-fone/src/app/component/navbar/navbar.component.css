@@ -1,14 +1,14 @@
 /* Fixed sidenav, full height */
 .sidenav {
-    height: 100%;
+    height: 120%;
     width: 220px;
-    background-color: #8fcfd1;
-    position: fixed;
+    background-color: #f1f1f1;/*#8fcfd1*/
+    position: absolute;
     z-index: 1;
-    top: 0;
     left: 0;
     overflow-x: hidden;
     padding-top: 20px;
+    border-right: 1px solid;
     /*border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;*/
   }
@@ -30,7 +30,11 @@
   
   /* On mouse-over */
   .sidenav a:hover, .dropdown-btn:hover {
-    color: #f1f1f1;
+    color: black;
+  }
+
+  .sidenav a{
+    border-bottom: 1px;
   }
   
   /* Main content */

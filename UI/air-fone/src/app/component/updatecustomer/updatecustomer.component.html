@@ -1,39 +1,52 @@
+<app-adminheader></app-adminheader>
 <app-navbar></app-navbar>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    
-    <form class="form-body" *ngFor="let user of users" [formGroup]="updateform">
-        <div class="container">
-        <h1>Update User Data</h1>
-        <div class="form-group">
-        <label>MobileNo:</label>
-        <input class="input-xlarge" type="text"  [(ngModel)]=user.mobileno name="mno" formControlName="mno">
-        </div>
-        <div class="form-group">
-        <label>Name:</label>
-        <input type="text" [(ngModel)]=user.uname name="uname" formControlName="uname">
-        </div>
-        <div class="form-group">
-        <label>Password:</label>
-        <input type="text"[(ngModel)]=user.upassword name="upassword" formControlName="upassword">
-        </div>
-        <div class="form-group">
-        <label>Customer Type:</label>
-        <input type="text" [(ngModel)]=user.typecust name="typecust" formControlName="typecust">
-        </div>
-        <input class="registerbtn" type="submit" value="Update" (click)="updatecustomer()">
-        </div>
-        
-    </form>
-    
+<h1>Update Customer Details</h1>
+<div class="container">
+<form  class="was-validated" *ngFor="let user of users" [formGroup]="updateform">
+
+  <br><br>
+      <div class="form-group">
+        <label for="mobilenumber">Mobile Number:</label>
+        <input type="text" class="form-control" id="mobilenumber" [(ngModel)]=user.mobileno name="mno" formControlName="mno"  required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <div class="form-group">
+      <label for="uname">Name:</label>
+      <input type="text" class="form-control" id="uname" [(ngModel)]=user.uname name="uname" formControlName="uname" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="text" class="form-control" id="password" [(ngModel)]=user.upassword name="upassword" formControlName="upassword" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+        <label for="customertype">Cutomer Type:</label>
+        <input type="text" class="form-control" id="customertype" [(ngModel)]=user.typecust name="typecust" formControlName="typecust" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="updatecustomer()">Update</button>
+  </form>
+</div>
+
 </body>
 </html>
+
 
 
     

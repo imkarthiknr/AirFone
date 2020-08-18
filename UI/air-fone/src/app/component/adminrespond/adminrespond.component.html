@@ -1,44 +1,60 @@
+<app-adminheader></app-adminheader>
 <app-navbar></app-navbar>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Send Mail</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    
-    <form class="form-body" *ngFor="let complaint of single_complaint" [formGroup]="mailform">
-        <h1>Send Response</h1>
-        <div class="container">
-        <div class="form-group">
-        <label>Ticket ID:</label>
-        <input class="input-xlarge" type="text"  [(ngModel)]=complaint.ticket_id formControlName="ticketid">
-        </div>
-        <div class="form-group">
-        <label>Name:</label>
-        <input type="text" [(ngModel)]=complaint.name formControlName="name">
-        </div>
-        <div class="form-group">
-        <label>Email:</label>
-        <input type="text"[(ngModel)]=complaint.email formControlName="email">
-        </div>
-        <div class="form-group">
-        <label>Description:</label>
-        <input type="text" [(ngModel)]=complaint.description formControlName="description">
-        </div>
-        <div class="form-group">
-            <label>Attender:</label>
-            <input type="text" [(ngModel)]=complaint.assignedperson  formControlName="attender">
-        </div>
-        <div class="form-group">
-            <label>Mobile Number:</label>
-            <input type="text" [(ngModel)]=complaint.mobileno formControlName="mobilenumber">
-        </div>
-        <input class="registerbtn" type="submit" value="Send Response" (click)="Sendmail()">
-        </div>
-        
-    </form>
-    
+<h1>Send Response</h1>
+<div class="container">
+<form  class="was-validated" *ngFor="let complaint of single_complaint" [formGroup]="mailform">
+
+  <br><br>
+      <div class="form-group">
+        <label for="ticketid">Ticket ID:</label>
+        <input type="text" class="form-control" id="ticketid" [(ngModel)]=complaint.ticket_id formControlName="ticketid"  required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <div class="form-group">
+      <label for="uname">Name:</label>
+      <input type="text" class="form-control" id="uname" [(ngModel)]=complaint.name formControlName="name" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="text" class="form-control" id="email" [(ngModel)]=complaint.email formControlName="email" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <div class="form-group">
+        <label for="Description">Description:</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]=complaint.description formControlName="description" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <div class="form-group">
+        <label for="attender">Attender:</label>
+        <input type="text" class="form-control" id="attender" [(ngModel)]=complaint.assignedperson  formControlName="attender" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="form-group">
+        <label for="mobilenumber">Mobile Number:</label>
+        <input type="text" class="form-control" id="mobilenumber" [(ngModel)]=complaint.mobileno formControlName="mobilenumber" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="Sendmail()">Update</button>
+  </form>
+</div>
+
 </body>
 </html>

@@ -34,6 +34,7 @@ import { AdminprofileComponent } from './component/adminprofile/adminprofile.com
 import { AdmincomplaintdetailsComponent } from './component/admincomplaintdetails/admincomplaintdetails.component';
 import { AdminrespondComponent } from './component/adminrespond/adminrespond.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
+import { AdminheaderComponent } from './component/adminheader/adminheader.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -45,7 +46,7 @@ import { AdminloginComponent } from './component/adminlogin/adminlogin.component
     HeaderComponent,
     DashboardComponent,
     AdsComponent, 
-    CustDetailComponent, BillComponent, CustomerdetailsComponent, NavbarComponent, AdmindashboardComponent, UpdatecustomerComponent, BillgenerationComponent, AdminprofileComponent, AdmincomplaintdetailsComponent, AdminrespondComponent, AdminloginComponent
+    CustDetailComponent, BillComponent, CustomerdetailsComponent, NavbarComponent, AdmindashboardComponent, UpdatecustomerComponent, BillgenerationComponent, AdminprofileComponent, AdmincomplaintdetailsComponent, AdminrespondComponent, AdminloginComponent, AdminheaderComponent
   ],
   imports: [  
     BrowserModule,

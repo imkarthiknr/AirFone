@@ -1,38 +1,47 @@
+<app-adminheader></app-adminheader>
 <app-navbar></app-navbar>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1>Admin Profile</h1>
-    <br>
-    <form *ngFor="let admin of admindetail" [formGroup]="adminform" (ngSubmit)="onSubmit()">
-        <div class="contain">
-        <label>Admin Id</label>
-        <input type="text" [(ngModel)]=admin.adminid formControlName="adminid" disabled="disabled">
-        <br><br>
-        <label>User Name:</label>
-        <input type="text" formControlName="auname" [(ngModel)]=admin.auname>
-        <br>
-        <br>
-        <label>Password:</label>
-        <input type="text" [(ngModel)]=admin.apassword formControlName="apassword">
-        <br>
-        <br>
-    </div>
-    
-    <div>
+<h1>Admin Profile</h1>
+<div class="container">
+<form  class="was-validated" *ngFor="let admin of admindetail" [formGroup]="adminform" (ngSubmit)="onSubmit()">
 
-        <input class="btn btn-primary" type="Submit" value="Update">
+  <br><br>
+      <div class="form-group">
+        <label for="Admin">Admin Id</label>
+        <input type="text" class="form-control" id="Admin" [(ngModel)]=admin.adminid formControlName="adminid" disabled="disabled"  required>
+
+      </div>
+    <div class="form-group">
+      <label for="uname">Username:</label>
+      <input type="text" class="form-control" id="uname" formControlName="auname" [(ngModel)]=admin.auname required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
     </div>
-       
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" [(ngModel)]=admin.apassword formControlName="apassword" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
     
-    </form>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
 </body>
 </html>
+
+
 
    
 
