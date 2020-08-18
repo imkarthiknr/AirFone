@@ -100,11 +100,11 @@ class UserUpdate(Resource):
         return customer, 201
 
 class Billgenerate(Resource):
-	def get(self,start,end):
+	def get(self,start,end,cust_type):
 		data = request.get_json()
 		conn = mysql.connect()
 		cursor = conn.cursor()
-		select_query = "select * from billing_customer where start>= '"+str(start)+"' and start<='"+str(end)+"'"
+		select_query = "select * from billing_customer where start>= '"+str(start)+"' and start<='"+str(end)+"'and cust_type= '"+str(cust_type)+"' "
 		cursor.execute(select_query)
 		rows = cursor.fetchall()
 		mydict={}
@@ -122,7 +122,6 @@ class Billgenerate(Resource):
 			invalid={'not-found':'invalid'}
 			return invalid
 
-		return {'User': None}, 404
 
 class Adminlogin(Resource):
 	def get(self):
@@ -224,17 +223,34 @@ class LoginToDashboard(Resource):
 			invalid={'not-found':'invalid'}
 			return invalid
 
-		return {'User': None}, 404
+
+class CustomerBillHistory(Resource):
+	def get(self,phno):
+		conn = mysql.connect()
+		cursor = conn.cursor()
+		select_query = "select Billing_id,phno,benefits,price,start,end from billing_customer where phno = '"+str(phno)+"'"
+		cursor.execute(select_query)
+		rows = cursor.fetchall()
+		d={}
+		a=[]
+		for row in rows:
+			a.append({"Billing_id":str(row[0]),"MobileNo":row[1],"Benefits":row[2],"price":row[3],"start":str(row[4]),"end":str(row[5])})
+			d["billing"]=a
+		conn.commit()
+		conn.close()
+		if(len(rows)>0):
+			return d
+		return {"billing":"Notfound"}
 
 api.add_resource(UserDetails,'/customerdetails/')
 api.add_resource(CustomerDelete,'/customerdelete/<int:cust_id>')
 api.add_resource(Singleuser,'/customerdetail/<int:mobileno>')
 api.add_resource(UserUpdate,'/customerupdate/<string:mobileno>')
-api.add_resource(Billgenerate,'/billgenerate/<string:start>/<string:end>')
+api.add_resource(Billgenerate,'/billgenerate/<string:start>/<string:end>/<string:cust_type>')
 api.add_resource(Adminlogin,'/adminprofile/')
 api.add_resource(AdminUpdate,'/adminupdate/<int:adminid>')
 api.add_resource(ComplaintDetails,'/complaintdetails/')
 api.add_resource(ComplaintDetail,'/complaintdetail/<int:ticketid>')
 api.add_resource(LoginToDashboard,'/adminlogin/')
-
+api.add_resource(CustomerBillHistory,'/customerbillhistory/<string:phno>')
 app.run(port=port)

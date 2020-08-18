@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Customer Bill History</h1>
+<div class="container">
+<form  class="was-validated" [formGroup]="customerbillform" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="customer Mobile Number">Customer Mobile Number:</label>
+        <input type="text" class="form-control" id="startdate" formControlName="mobilenumber" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br>
+<table [hidden]="isshow" class="table table-striped table-bordered table-responsive-md">
+  <tr>
+    <th>Bill Id</th>
+    <th>Mobile No</th>
+    <th>Benefits</th>
+    <th>Price</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </tr>
+  <tr *ngFor="let bill of billdetail">
+    <td>{{bill.Billing_id}}</td>
+    <td>{{bill.MobileNo}}</td>
+    <td>{{bill.Benefits}}</td>
+    <td>{{bill.price}}</td>
+    <td>{{bill.start}}</td>
+    <td>{{bill.end}}</td>
+  </tr>
+</table>
+
+</body>
+</html>

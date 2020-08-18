@@ -1,3 +1,5 @@
+import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
+import { CustomerbillhistoryComponent } from './component/customerbillhistory/customerbillhistory.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminrespondComponent } from './component/adminrespond/adminrespond.component';
 import { AdmincomplaintdetailsComponent } from './component/admincomplaintdetails/admincomplaintdetails.component';
@@ -33,6 +35,8 @@ const routes: Routes = [
   {path:'admincomplaintpage',component:AdmincomplaintdetailsComponent},
   {path:'mail/:id',component:AdminrespondComponent},
   {path:'adminlogin',component:AdminloginComponent},
+  {path:'customerbillhistory',component:CustomerbillhistoryComponent},
+  {path:'forgetpassword',component:ForgotpasswordComponent},
 ];
 
  

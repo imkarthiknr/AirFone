@@ -1,3 +1,4 @@
+import { CustomerbillService } from './service/customerbill.service';
 import { AdmincomplaintService } from './service/admincomplaint.service';
 import { AdminprofileService } from './service/adminprofile.service';
 import { BillgenerationService } from './service/billgeneration.service';
@@ -35,6 +36,8 @@ import { AdmincomplaintdetailsComponent } from './component/admincomplaintdetail
 import { AdminrespondComponent } from './component/adminrespond/adminrespond.component';
 import { AdminloginComponent } from './component/adminlogin/adminlogin.component';
 import { AdminheaderComponent } from './component/adminheader/adminheader.component';
+import { CustomerbillhistoryComponent } from './component/customerbillhistory/customerbillhistory.component';
+import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -46,7 +49,7 @@ import { AdminheaderComponent } from './component/adminheader/adminheader.compon
     HeaderComponent,
     DashboardComponent,
     AdsComponent, 
-    CustDetailComponent, BillComponent, CustomerdetailsComponent, NavbarComponent, AdmindashboardComponent, UpdatecustomerComponent, BillgenerationComponent, AdminprofileComponent, AdmincomplaintdetailsComponent, AdminrespondComponent, AdminloginComponent, AdminheaderComponent
+    CustDetailComponent, BillComponent, CustomerdetailsComponent, NavbarComponent, AdmindashboardComponent, UpdatecustomerComponent, BillgenerationComponent, AdminprofileComponent, AdmincomplaintdetailsComponent, AdminrespondComponent, AdminloginComponent, AdminheaderComponent,CustomerbillhistoryComponent, ForgotpasswordComponent
   ],
   imports: [  
     BrowserModule,
@@ -58,7 +61,7 @@ import { AdminheaderComponent } from './component/adminheader/adminheader.compon
     RouterModule,
     BrowserAnimationsModule
   ],
-  providers: [AdminprofileService,GetuserService,GetsingleuserService,BillgenerationService,AdmincomplaintService], 
+  providers: [AdminprofileService,GetuserService,GetsingleuserService,BillgenerationService,AdmincomplaintService,CustomerbillService], 
   bootstrap: [AppComponent,HomeComponent]
 })
 export class AppModule { }

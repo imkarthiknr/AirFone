@@ -18,7 +18,8 @@ export class BillgenerationComponent implements OnInit {
   ngOnInit(): void {
     this.billform=new FormGroup({
       startdate:new FormControl('',Validators.required),
-      enddate:new FormControl('',Validators.required)
+      enddate:new FormControl('',Validators.required),
+      Customertype:new FormControl('',Validators.required)
     })
 
   }
@@ -27,7 +28,7 @@ export class BillgenerationComponent implements OnInit {
   onSubmit(){
     this.isshow=false;
     const val=this.billform.value;
-    this.bill.getbilldata(val.startdate,val.enddate).subscribe((response)=>{this.billdetail=response.Bill;
+    this.bill.getbilldata(val.startdate,val.enddate,val.Customertype).subscribe((response)=>{this.billdetail=response.Bill;
       console.log(response);
     console.log(this.billdetail);})
   }

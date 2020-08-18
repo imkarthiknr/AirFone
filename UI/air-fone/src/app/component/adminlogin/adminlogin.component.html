@@ -12,7 +12,7 @@
                 <br>
                 
                 <label for="Mobile_number">User Name:</label>
-                <input type="text" formControlName="uname" placeholder="Enter User Name"/>
+                <input type="text" class="uname" formControlName="uname" placeholder="Enter User Name"/>
                 <br>
                 <span *ngIf="!adminloginform.get('uname').value
                 && (adminloginform.get('uname').touched || adminloginform.get('uname').dirty)">

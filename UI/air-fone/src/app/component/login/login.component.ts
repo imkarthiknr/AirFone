@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginform=new FormGroup({
-      m_number:new FormControl('',Validators.required),
+      m_number:new FormControl('',[Validators.required,Validators.pattern("^[0-9]{10}")]),
       u_password:new FormControl('',Validators.required)
     })
   }
