@@ -1,123 +1,99 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 <body>
-<div class="container">
-            <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onsubmit()" role="form">
-                <h2>Registration</h2>
-                <div class="form-group">
-                    <label for="CName" class="col-sm-3 control-label">First Name</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="CName" name="CName" placeholder="First Name" class="form-control" formControlname="CName" autofocus>
-                        <span *ngIf="!registerForm.get('CName').valid && registerForm.get('CName').touched || registerForm.get('CName').dirty " class="help-block" >Please enter username!!</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                  <label for="DOB" class="col-sm-3 control-label">Date of Birth*</label>
-                  <div class="col-sm-9">
-                      <input type="text" id="DOB" name="DOB" placeholder="Date of Birth" class="form-control" formControlname="DOB">
-                      <span *ngIf="!registerForm.get('DOB').valid && registerForm.get('DOB').touched || registerForm.get('DOB').dirty " class="help-block" >Please enter valid Date of birth!!</span>
-                  </div>
-              </div>
-                <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email* </label>
-                    <div class="col-sm-9">
-                        <input type="text" id="email" placeholder="Email" class="form-control" name= "email" formControlname="email">
-                        <span *ngIf="!registerForm.get('Email').valid && registerForm.get('Email').touched || registerForm.get('Email').dirty" class="help-block" >Please enter a valid Email!!</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password*</label>
-                    <div class="col-sm-9">
-                        <input type="password" id="password" name="Pwd" placeholder="Password" class="form-control" formControlname="Pwd">
-                        <span *ngIf="!registerForm.get('Pwd').valid && registerForm.get('Pwd').touched || registerForm.get('Pwd').dirty" class="help-block" >Please enter a valid Password!!</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="AadharNumber" class="col-sm-3 control-label">AadharNumber</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="AadharNumber" name="AadharNumber" placeholder="Aadhar Number" class="form-control" formControlname="AadharNumber">
-                        <span *ngIf="!registerForm.get('AadharNumber').valid && registerForm.get('AadharNumber').touched || registerForm.get('AadharNumber').dirty" class="help-block" 	>Please enter a valid AadharNumber Number!!</span>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="Occupation" class="col-sm-3 control-label">Occupation </label>
-                    <div class="col-sm-9">
-                        <input type="text" id="Occupation" name="Occupation" placeholder="Occupation" class="form-control" formControlname="Occupation">
-                        <span *ngIf="!registerForm.get('Occupation').valid && registerForm.get('Occupation').touched || registerForm.get('Occupation').dirty" class="help-block">Please enter a valid Occupation!!</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                        <label for="Houseno" class="col-sm-3 control-label">Housenumber </label>
-                    <div class="col-sm-9">
-                        <input type="text" id="Houseno" name="Houseno" placeholder="House number" class="form-control" formControlname="Houseno">
-                        <span *ngIf="!registerForm.get('Houseno').valid && registerForm.get('Houseno').touched || registerForm.get('Houseno').dirty" class="help-block" >Enter your Housenumber</span>
-                    </div>
-                </div>
-                 <div class="form-group">
-                        <label for="Street" class="col-sm-3 control-label">Street</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="weight" name="Street" placeholder="Street" class="form-control" formControlname="Street">
-                        <span *ngIf="!registerForm.get('Street').valid && registerForm.get('Street').touched || registerForm.get('Street').dirty" class="help-block" >Enter your Street</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                  <label for="City" class="col-sm-3 control-label">City</label>
-              <div class="col-sm-9">
-                  <input type="text" id="weight" name="City" placeholder="City" class="form-control" formControlname="City">
-                  <span *ngIf="!registerForm.get('City').valid && registerForm.get('City').touched || registerForm.get('City').dirty" class="help-block" >Enter your City</span>
-              </div>
-                 </div>
-               <div class="form-group">
-                 <label for="State" class="col-sm-3 control-label">State</label>
-                 <div class="col-sm-9">
-                 <input type="State" id="weight" name="State" placeholder="State" class="form-control" formControlname="State">
-                 <span *ngIf="!registerForm.get('State').valid && registerForm.get('State').touched || registerForm.get('State').dirty" class="help-block" >Enter your State</span>
-              </div>
-            </div>
-        <div class="form-group">
-            <label for="pincode" class="col-sm-3 control-label">Pincode</label>
-            <div class="col-sm-9">
-                <input type="text" id="pincode" name="pincode" placeholder="pincode" class="form-control" formControlname="pincode">
-                <span *ngIf="!registerForm.get('pincode').valid && registerForm.get('pincode').touched || registerForm.get('pincode').dirty" class="help-block" >Enter your pincode</span>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-sm-3" name="Type_Cust">Enter the Type of Customer</label>
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="col-sm-4">
-                        <label class="radio-inline">
-                            <input type="radio" id="Pre-paid" value="Pre-paid" formControlname="Pre-paid">Prepaid
-                                </label><br>
-                            </div>
-                            <div class="col-sm-4">
-                                <label class="radio-inline">
-                                    <input type="radio" id="Post-paid" value="Post-paid" formControlname="Post-paid">Postpaid
-                                </label><br>
-                            </div>
-                            <div class="col-sm-4">
-                              <label class="radio-inline">
-                                  <input type="radio" id="Broadband" value="Broadband" formControlname="Broadband">Broadband
-                              </label><br>
-                          </div>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                <div>
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <span class="help-block">*Required fields</span>
-                    </div>
-                </div>
-                <button (click)="onsubmit()" class="btn btn-primary btn-block">Register</button>
-            </form> <!-- /form -->
-        </div> <!-- ./container -->
-      </body>
+    <div class="class1">
+        <form>
+            <h2>REGISTRATION</h2><br><br>
+            <table>
+                <tr>
+                    <td><b>Name</b></td>&nbsp;&nbsp;
+                    <td><input type="text" name="name" placeholder="Enter your name" [(ngModel)]="CName" required="required"></td>
+                </tr>
+                    <tr>
+                    <td><span style="color:red">{{result}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>Date of birth</b></td>&nbsp;&nbsp;
+                    <td><input type="date" name="DOB" [(ngModel)]="DOB" reuired="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result1}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>Email</b></td>&nbsp;&nbsp;
+                    <td><input type="email" name="Email" placeholder="abc@gmail.com" [(ngModel)]="Email" required="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result2}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>Password</b></td>&nbsp;&nbsp;
+                    <td><input type="password" name="Pwd" placeholder="abc@1298$!" [(ngModel)]="Pwd" required="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result3}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>Aadhar Number</b></td>&nbsp;&nbsp;
+                    <td><input type="text" name="AadharNumber" [(ngModel)]="AadharNumber" placeholder="2222 2222 2222" pattern="^[2-9]{1}[0-9]{3}\\s[0-9]{4}\\s[0-9]{4}$" required="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result11}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>Occupation</b></td>&nbsp;&nbsp;
+                    <td><input type="text" name="Occupatiom" placeholder="Enter your occupation" [(ngModel)]="Occupation" required="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result4}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>House Number</b></td>&nbsp;&nbsp;
+                    <td><input type="text" name="HouseNo" placeholder="Enter house number" [(ngModel)]="HouseNo" required="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result5}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>Street</b></td>&nbsp;&nbsp;
+                    <td><input type="text" name="Street" placeholder="Enter your street" [(ngModel)]="Street" required="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result6}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>City</b></td>&nbsp;&nbsp;
+                    <td><input type="text" name="City" placeholder="Enter your city" [(ngModel)]="City" required="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result7}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>State</b></td>&nbsp;&nbsp;
+                    <td><input type="text" name="State" placeholder="Enter your state name" [(ngModel)]="State" required="required"></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result8}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>Pincode</b></td>&nbsp;&nbsp;
+                    <td><input type="text" name="pincode" placeholder="Enter your pincode" [(ngModel)]="pincode" required="required"/></td>
+                </tr>
+                <tr>
+                    <td><span style="color:red">{{result9}}</span></td>
+                </tr><br>
+                <tr>
+                    <td><b>Customer type</b></td>&nbsp;&nbsp;
+                    <td><select name="selectedOption" [(ngModel)]="selectedOption">
+                        <option disabled selected>select</option>
+                        <option *ngFor="let o of options">
+                           {{o.name}}
+                        </option>
+                     </select></td>
+                    <!--<td><input type="text" name="Type_Cust" placeholder="prepaid/postpaid/broadband" [(ngModel)]="Type_Cust"></td>-->
+                </tr><br>
+                <tr>
+                    <td colspan='2'><button value="submit" name="submit" (click)="register()"><b>Register</b></button></td>
+                </tr><br>
+            </table>
+        </form>
+    </div>
+</body>

@@ -1,30 +1,68 @@
-<body>
-    <div class="container">
-        <div class="signin-content">
-        <div class="signin-form">
-            <form>
-                <div class="form-group">
-                    <h1>Recharge</h1>
-                    <br>
-                </div>
-                
-                <label>Enter phone number</label>
-                <input type="text" placeholder="Enter registered phone number" name="phno" [(ngModel)]="phno">
-                <br>
-                <br>
-                <label>Enter your plan</label>
-                <input class="name" type="text" placeholder="Enter amount from the plan" name="plan" [(ngModel)]="plan">
-                <br>
-                <br>
-                <label>Enter the type of customer</label>
-                <input class="text" placeholder="Choose prepaid/postpaid/broadband" name="description" [(ngModel)]="description">
-                <br><br>
-                <div class="form-group form-button">
-                    <button class="form-submit" name="submit" (click)="recharge()">Submit</button>
-                </div>
-            </form>
-    
+
+<app-header></app-header>
+    <style>
+        input[type=text], select {
+          width: 50%;
+          padding: 12px 20px;
+          margin: 8px 0px 0px 0px;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+        }
+        
+        input[type=submit] {
+          width: 10%;
+          
+          background-color: red;
+          color: white;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: blue;
+        }
+        p {
+                    text-align: center;
+                }
+        h1{
+        text-align: center;
+        }
+        
+        div {
+          border-radius: 5px;
+          background-color: #f2f2f2;
+          padding: 50px;
+        }
+        </style>
+        
+        <body>
+        <div>
+          <form>
+           <h1><b>RECHARGE</b></h1>
+          <br><br>
+            <label for="PhoneNumber">MOBILE NUMBER</label><br>
+            <input type="text" name="phno" [(ngModel)]=Mobileno required disabled><br><br>
+        
+            <label for="plan">AMOUNT </label><br>
+            <input class="name" type="text" placeholder="Enter amount from the plan" name="plan" [(ngModel)]=amount   required disabled>
+              <br><br>
+            
+              
+            <label for="plan">TYPE </label><br>
+            <input class="name" type="text" placeholder="Enter type of tariff plan" name="description" [(ngModel)]=tariffplan  required disabled>
+            <br>
+            <br>
+            <br>
+            <br>
+        <p>  
+            <input type="submit" value="Submit" (click)="recharge()">
+        </p>  
+          </form>
         </div>
-        </div>
-    </div>
-    </body>
+        </body>
+  <app-footer></app-footer>

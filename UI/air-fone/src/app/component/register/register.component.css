@@ -1,25 +1,32 @@
-body {
+body
+{    
+    background-image: url("../../../../src/assets/images/bg1.jpg");
     
-    background-color: #8fcfd1;
- }
- 
- *[role="form"] {
-    max-width: 530px;
-    padding: 15px;
-    margin: 0 auto;
-    border-radius: 0.3em;
-    background-color: #f2f2f2;
- }
- 
- *[role="form"] h2 { 
-    font-family: 'Open Sans' , sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    color: #000000;
-    margin-top: 5%;
+}
+.class1
+{
+    background-color: lightgray;
+    padding: 50px;
+    margin-left: 31%;
+    margin-right: 34%;
+}
+table
+{
+    margin-left: 14%;
+}
+td
+{
+    margin-bottom: 10%;
+}
+h2
+{
     text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 4px;
- }
- 
- 
+    font-size:50px;
+}
+button
+{
+    background-color: lightseagreen;
+    padding: 9px;
+    border-radius: 21%;
+    border: outset;
+}

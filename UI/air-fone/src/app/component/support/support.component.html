@@ -1,0 +1,38 @@
+<body>
+    <div class="container">
+        <div class="signin-content">
+        <div class="signin-form">
+            <form>
+                <div class="form-group">
+                    <h1>Customer Support</h1>
+                    <br>
+                </div>
+                
+                <label>Enter Mail Id:</label>
+                <input type="email" placeholder="Enter Email Id" name="email_id" [(ngModel)]="email_id">
+
+                <br>
+                <br>
+
+                <label>Name:</label>
+                <input class="name" type="text" placeholder="Enter Name" name="user" [(ngModel)]="user">
+
+                <br>
+                <br>
+
+                <label>Description:</label>
+                <textarea cols="46" rows="3" placeholder="Type your message...." name="description" [(ngModel)]="description"></textarea>
+                
+                <br>
+                <br>
+
+                <div class="form-group form-button">
+                    <button class="form-submit" name="submit" (click)="help()">Submit</button>
+                </div>
+            </form>
+    
+        </div>
+        </div>
+    </div>
+</body>
+

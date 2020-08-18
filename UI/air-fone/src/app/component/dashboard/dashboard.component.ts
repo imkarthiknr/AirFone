@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ActivatedRoute} from '@angular/router';
+import { MobilenoService } from '../../service/mobileno.service'
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private mobile: MobilenoService ) { }
 
   ngOnInit(): void {
-  }
+    this.route.queryParams.subscribe(params => {
+      const userId:any = params['mobilenumber'];
+      this.mobile.FetchMobileNo(userId)
+      console.log(userId);
+  });
 
+  }
 }

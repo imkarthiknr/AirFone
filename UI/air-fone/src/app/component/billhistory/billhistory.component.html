@@ -1,0 +1,52 @@
+<app-header></app-header>
+<body>
+    <div class="container">
+        <div class="signin-content">
+        <div class="signin-form">
+            <form>
+                <div class="form-group">
+                    <h1>Billing history</h1>
+                    <br>
+                </div>
+                
+                <!--<label>Enter your number</label>-->
+                <input type="text" placeholder="Enter mobile number" name="phno" [(ngModel)]="phno">
+                <br>
+                <br>
+                <!--<label>Name:</label>
+                <input class="name" type="text" placeholder="Enter Name" name="user" [(ngModel)]="user">
+                <br>
+                <br>
+                <label>Description:</label>
+                <textarea cols="46" rows="3" placeholder="Type your message...." name="description" [(ngModel)]="description"></textarea>
+                <br><br>-->
+                <div class="form-group form-button">
+                    <button class="form-submit" name="submit" (click)="history()">Submit</button>
+                </div>
+            </form>
+    
+        </div>
+        </div>
+    </div>
+    <div class="form-group">
+    <table border=1px solid black>
+        <tr>
+            <th>Billing ID</th>
+            <th>Mobile number</th>
+            <th>Benefits</th>
+            <th>Price</th>
+            <th>Recharge date</th>
+            <th>Validity</th>
+        </tr>
+        <tr *ngFor="let l of list">
+            <td>{{l.billing_id}}</td>
+            <td>{{l.MobileNo}}</td>
+            <td>{{l.Benefits}}</td>
+            <td>{{l.price}}</td>
+            <td>{{l.start}}</td>
+            <td>{{l.end}}</td>
+        </tr>
+    </table>
+    </div>
+    </body>
+<app-footer></app-footer>

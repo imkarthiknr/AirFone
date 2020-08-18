@@ -6,3 +6,7 @@ drop table customer;
 desc customer;
 
 select * from customer;
+
+
+
+

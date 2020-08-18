@@ -1,46 +1,47 @@
-<app-menu></app-menu>
-
-    <div class="container">
-    <div class="signin-content">
-    <div class="signin-form">
-    <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <h1>LOGIN</h1>
-            <br>
-            <br>
-            
-            <label for="Mobile_number">MOBILE NUMBER:</label>
-            <input type="text" formControlName="m_number" placeholder="Enter Mobile Number"/>
-            <br>
-            <br>
-            <span *ngIf="!loginform.get('m_number').value
-            && (loginform.get('m_number').touched || loginform.get('m_number').dirty)">
-            Mobile Number is Required</span>
-        </div>
-        <br>
-        <div class="form-group">
-            <label for="password">PASSWORD:</label>
-            <input type="password" formControlName="u_password" placeholder="Password"/>
-            <br><br>
-            <div class="forget-password">
-                <a routerLink="#" routerLinkActive="active">Forgot Password?</a>
+<body>
+    <app-menu></app-menu>
+    
+        <div class="container">
+        <div class="signin-content">
+        <div class="signin-form">
+        <form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <h1>Login</h1>
+                <br>
+                <br>
+                <label for="Mobile_number">Mobile Number:</label>
+                <input type="text" formControlName="m_number" placeholder="Enter Mobile Number"/>
+                <br>
+                <span *ngIf="!loginform.get('m_number').value
+                && (loginform.get('m_number').touched || loginform.get('m_number').dirty)">
+                Mobile Number is Required</span>
+                <br>
+                
             </div>
-            <span *ngIf="!loginform.get('u_password').value
-            && (loginform.get('u_password').touched || loginform.get('u_password').dirty)">
-            Enter Password</span>
+            <br>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" formControlName="u_password" placeholder="Password"/>
+                <br>
+                <span *ngIf="!loginform.get('u_password').value
+                && (loginform.get('u_password').touched || loginform.get('u_password').dirty)">
+                Enter Password</span>
+                <br>
+                <br>
+                <div class="forget-password">
+                    <a routerLink="#" routerLinkActive="active">Forgot Password?</a>
+                </div>
+                
+            </div>
+            
+           
+            <div class="form-group form-button">
+                <input type="submit" class="form-submit" value="Submit">
+            </div>
+            
+        </form>
         </div>
-        
-       
-        <div class="form-group form-button">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="submit" class="form-submit" value="Submit">
-        </div>
-        <br>
-        <br>
-        
-    </form>
     </div>
-</div>
-</div>
-<br><br><br><br><br><br><br><br><br><br>
-<app-footer></app-footer>
+    </div>
+    </body>
+    

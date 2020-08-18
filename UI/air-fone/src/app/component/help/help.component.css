@@ -1,0 +1,45 @@
+body{
+    margin-left:240px;
+}
+h1{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.accordion{
+    background-color: #f5f1da;
+    border-radius: 15px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    margin-left: -120px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.panel{
+    margin-left: 20px;
+    font-size: 15px;
+    margin-left: -80px;
+}
+
+input[type=submit] {
+    width: 10%;
+    
+    background-color: red;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: blue;
+  }
+  p {
+              text-align: center;
+          }

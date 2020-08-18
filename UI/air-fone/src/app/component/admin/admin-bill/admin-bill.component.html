@@ -1,0 +1,53 @@
+<app-admin-header></app-admin-header>
+<app-admin-menu></app-admin-menu>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1>Bill Generation</h1>
+<div class="container">
+<form  class="was-validated" [formGroup]="billform" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="startdate">Start Date:</label>
+        <input type="text" class="form-control" id="startdate" formControlName="startdate" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <div class="form-group">
+      <label for="enddate">End Date:</label>
+      <input type="text" class="form-control" id="endate" formControlName="enddate" required>
+      <div class="valid-feedback">Valid.</div>
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br>
+<table [hidden]="isshow" class="table table-striped table-bordered table-responsive-md">
+  <tr>
+    <th>Bill Id</th>
+    <th>Mobile No</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let bill of billdetail">
+    <td>{{bill.bill_id}}</td>
+    <td>{{bill.mobileno}}</td>
+    <td>{{bill.uname}}</td>
+    <td>{{bill.email}}</td>
+    <td>{{bill.price}}</td>
+  </tr>
+</table>
+
+</body>
+</html>

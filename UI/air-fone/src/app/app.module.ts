@@ -20,6 +20,26 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BillComponent } from './component/bill/bill.component';
+import { PlansComponent } from './component/plans/plans.component';
+import { PrepaidComponent } from './component/prepaid/prepaid.component';
+import { PostpaidComponent } from './component/postpaid/postpaid.component';
+import { BroadbandComponent } from './component/broadband/broadband.component';
+import { PaymentComponent } from './component/payment/payment.component';
+import { HelpComponent } from './component/help/help.component';
+import { SupportComponent } from './component/support/support.component';
+import { FeedbackComponent } from './component/feedback/feedback.component';
+import { BillhistoryComponent } from './component/billhistory/billhistory.component';
+import { AdminMenuComponent } from './component/admin/admin-menu/admin-menu.component';
+import { AdminHeaderComponent } from './component/admin/admin-header/admin-header.component';
+import { NotfoundComponent } from './component/notfound/notfound.component';
+import { AdminDashboardComponent } from './component/admin/admin-dashboard/admin-dashboard.component';
+import { AdminComplaintComponent } from './component/admin/admin-complaint/admin-complaint.component';
+import { AdminCustomerDetailsComponent } from './component/admin/admin-customer-details/admin-customer-details.component';
+import { AdminLoginComponent } from './component/admin/admin-login/admin-login.component';
+import { AdminProfileComponent } from './component/admin/admin-profile/admin-profile.component';
+import { AdminComplaintRespondComponent } from './component/admin/admin-complaint-respond/admin-complaint-respond.component';
+import { AdminCustomerUpdateComponent } from './component/admin/admin-customer-update/admin-customer-update.component';
+import { AdminBillComponent } from './component/admin/admin-bill/admin-bill.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -27,11 +47,16 @@ import { BillComponent } from './component/bill/bill.component';
     MenuComponent,
     FooterComponent,
     LoginComponent,
+    BillComponent,
     RegisterComponent,
     HeaderComponent,
     DashboardComponent,
     AdsComponent, 
-    CustDetailComponent, BillComponent
+    CustDetailComponent, 
+    PlansComponent,
+    PrepaidComponent, 
+    PostpaidComponent, 
+    BroadbandComponent, PaymentComponent, HelpComponent, SupportComponent, FeedbackComponent, BillhistoryComponent, AdminMenuComponent, AdminHeaderComponent, NotfoundComponent, AdminDashboardComponent, AdminComplaintComponent, AdminCustomerDetailsComponent, AdminLoginComponent, AdminProfileComponent, AdminComplaintRespondComponent, AdminCustomerUpdateComponent, AdminBillComponent
   ],
   imports: [  
     BrowserModule,
@@ -44,6 +69,6 @@ import { BillComponent } from './component/bill/bill.component';
     BrowserAnimationsModule
   ],
   providers: [], 
-  bootstrap: [AppComponent,HomeComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

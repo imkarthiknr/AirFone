@@ -1,3 +1,4 @@
+import { MobilenoService } from './../../service/mobileno.service';
 import { AuthserviceService } from '../../service/authservice.service';
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl,Validators} from '@angular/forms';
@@ -19,19 +20,21 @@ export class LoginComponent implements OnInit {
       u_password:new FormControl('',Validators.required)
     })
   }
-
-  onSubmit(){
-    const val = this.loginform.value;
-
-        if (val.m_number && val.u_password) {
+ 
+  
+  onSubmit()
+  {
+        const val = this.loginform.value;
+        if (val.m_number && val.u_password) 
+        {
             this.auth.login(val.m_number, val.u_password)
                 .subscribe(
                     () => {
                         console.log("User is logged in");
-                        this.router.navigate(['/dashboard'],{queryParams:{uname:val.m_number}});
+                        this.router.navigate(['/Dashboard'],{queryParams:{mobilenumber:val.m_number}});
                     }
                 );
-                  }
+        }
     
-}
+    }
   }

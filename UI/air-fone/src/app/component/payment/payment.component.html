@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+<div class="row">
+  <div class="col-75">
+    <div class="container">
+      <form  [formGroup]="paymentGateway" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-50">
+            <h3>User Details</h3>
+            <label for="Name"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="Name" name="firstname" placeholder="Full Name" class="form-control" formControlName="Name"[ngClass]="{'is-invalid':paymentGateway.get('Name').touched && paymentGateway.get('Name').invalid}">
+            <div class="invalid-feedback">
+              <div>Name is required</div>
+             </div>
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="Email ID" class="form-control" formControlName="email"[ngClass]="{'is-invalid':paymentGateway.get('email').touched && paymentGateway.get('email').invalid} ">
+            <div *ngIf="paymentGateway.get('email').touched && paymentGateway.get('email').invalid"class="invalid-feedback">
+              <div *ngIf="paymentGateway.get('email').errors.required">Email Id is required</div>
+              <div *ngIf="paymentGateway.get('email').errors.email">Email Id must be Valid</div>
+          </div>
+            <label for="Phone"><i class="fa fa-phone"></i> Mobile Number</label>
+            <input type="text" id="phone" name="phone" placeholder="Mobile Number" class="form-control" formControlName="phone"[ngClass]="{'is-invalid':paymentGateway.get('phone').touched && paymentGateway.get('phone').invalid}">
+            <div *ngIf="paymentGateway.get('phone').touched && paymentGateway.get('phone').invalid" class="invalid-feedback">
+              <div *ngIf="paymentGateway.get('phone').errors.required">Phone number is required</div>
+              <div *ngIf="paymentGateway.get('phone').errors.minlength">length should be 10</div>
+             </div>
+          </div>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="CName" name="cardname" placeholder="Name on Card" class="form-control" formControlName="CName"[ngClass]="{'is-invalid':paymentGateway.get('CName').touched && paymentGateway.get('CName').invalid}">
+            <div class="invalid-feedback">
+              <div>Name on Card is required</div>
+             </div>
+            <label for="ccnum">Card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" class="form-control" formControlName="cardnumber"[ngClass]="{'is-invalid':paymentGateway.get('cardnumber').touched && paymentGateway.get('cardnumber').invalid}">
+            <div class="invalid-feedback" *ngIf="paymentGateway.get('phone').touched && paymentGateway.get('phone').invalid">
+            <div *ngIf="paymentGateway.get('cardnumber').errors.required">Card number is required</div>
+            <div *ngIf="paymentGateway.get('cardnumber').errors.minlength">Card number must be valid</div>
+             </div>
+            <label for="expmonth">Exp Month</label>
+            <select id="expmonth" name="expmonth" class="form-control" formControlName="expmonth">
+              <option value="Jan">January</option>
+              <option value="Feb">Febrauary</option>
+              <option value="Mar">March</option>
+              <option value="Apr">April</option>
+              <option value="May">May</option>
+              <option value="Jun">June</option>
+              <option value="Jul">July</option>
+              <option value="Aug">August</option>
+              <option value="Sep">September</option>
+              <option value="Oct">October</option>
+              <option value="Nov">November</option>
+              <option value="Dec">December</option>
+            </select>           
+             <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2022" class="form-control" formControlName="expyear"[ngClass]="{'is-invalid':paymentGateway.get('expyear').touched && paymentGateway.get('expyear').invalid}" >
+                <div class="invalid-feedback">
+                  <div>Expiry year is required</div>
+                 </div>
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352" class="form-control" formControlName="cvv"[ngClass]="{'is-invalid':paymentGateway.get('cvv').touched && paymentGateway.get('cvv').invalid}">
+                <div class="invalid-feedback">
+                  <div>CVV year is required</div>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <label>
+          <input type="checkbox" name="details"> The Card details are correct
+        </label>
+        <input type="submit" value="Pay" class="btn">
+      </form>
+    </div>
+  </div>
+</div>
+</body>

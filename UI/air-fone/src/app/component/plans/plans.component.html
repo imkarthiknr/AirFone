@@ -1,0 +1,387 @@
+<body>
+  <app-header></app-header>
+  <div>   
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav mr-auto">
+                 <li class="nav-item active">
+                     <a class="nav-link" routerLink="Plans">ALL PLANS<span class="sr-only">(current)</span></a>
+                 </li>
+                 <li class="nav-item other">
+                     <a class="nav-link" routerLink="Prepaid" href="#">PREPAID</a>
+                 </li>
+                 <li class="nav-item other">
+                     <a class="nav-link" routerLink="Postpaid" href="#">POSTPAID</a>
+                 </li>
+                 <li class="nav-item other">
+                     <a class="nav-link" routerLink="Broadband" href="#">BROADBAND</a>
+                 </li>
+             </ul>
+         </div>
+     </nav>
+ </div>
+    <br><br><br>
+    <h2 style="text-align: center;">PRE-PAID</h2>
+    <br><br>
+    <div class="container">
+        <div class="card-deck">
+         <div class="card bg-info">
+           <div class="card-body text-center">
+             <p class="card-text"><b>PREPAID-001</b></p>
+             <p class="card-text"><b>PLAN : ₹19</b></p>
+             <p class="card-text">VALIDITY : 2days</p>
+             <p class="card-text">BENEFITS : 200MB</p>
+             <p class="card-text">CALLING :UNLIMITED</p>
+             <p class="card-text">SMS : NIL</p>
+              <a (click)="PrepaidButton1()" class="btn btn-light">BUY PLAN</a>
+           </div>
+         </div>
+         <div class="card">
+           <div class="card-body text-center">
+             <p class="card-text">PREPAID-002</p>
+             <p class="card-text"><b>PLAN : ₹99</b></p>
+             <p class="card-text">VALIDITY : 18days</p>
+             <p class="card-text">BENEFITS : 1GB</p>
+             <p class="card-text">CALLING : UNLIMITED</p>
+             <p class="card-text">SMS : 100</p>
+             <a (click)="PrepaidButton2()" class="btn btn-info" >BUY PLAN</a>
+           </div>
+         </div>
+         <div class="card bg-info">
+           <div class="card-body text-center">
+             <p class="card-text"><b>PREPAID-003</b></p>
+             <p class="card-text"><b>PLAN : ₹129</b></p>
+             <p class="card-text">VALIDITY : 24days</p>
+             <p class="card-text">BENEFITS : 1GB</p>
+             <p class="card-text">CALLING : UNLIMITED</p>
+             <p class="card-text">SMS : 300</p>
+             <a (click)="PrepaidButton3()" class="btn btn-light">BUY PLAN</a>
+           </div>
+         </div>
+         <div class="card ">
+           <div class="card-body text-center">
+             <p class="card-text"><b>PREPAID-004</b></p>
+             <p class="card-text"><b>PLAN : ₹149</b></p>
+             <p class="card-text">VALIDITY : 28days</p>
+             <p class="card-text">BENEFITS : 2GB</p>
+             <p class="card-text">CALLING : UNLIMITED</p>
+             <p class="card-text">SMS : 300</p>
+             <a (click)="PrepaidButton4()" class="btn btn-info">BUY PLAN</a>
+           </div>
+         </div>  
+       </div>
+       <br><br>
+       <div class="card-deck">
+         <div class="card">
+             <div class="card-body text-center">
+                 <p class="card-text"><b>PREPAID-005</b></p>
+                 <p class="card-text"><b>PLAN : ₹149</b></p>
+                 <p class="card-text">VALIDITY : 28days</p>
+                 <p class="card-text">BENEFITS : 2GB</p>
+                 <p class="card-text">CALLING : UNLIMITED</p>
+                 <p class="card-text">SMS : 300</p>
+                  <a (click)="PrepaidButton5()" class="btn btn-info">BUY PLAN</a>
+               </div>
+         </div>
+         <div class="card bg-info">
+           <div class="card-body text-center">
+                 <p class="card-text"><b>PREPAID-006</b></p>
+                 <p class="card-text"><b>PLAN : ₹199</b></p>
+                 <p class="card-text">VALIDITY : 24days</p>
+                 <p class="card-text">BENEFITS : 1GB/Day</p>
+                 <p class="card-text">CALLING : UNLIMITED</p>
+                 <p class="card-text">SMS : 100/day</p>
+             <a (click)="PrepaidButton6()" class="btn btn-light">BUY PLAN</a>
+           </div>
+         </div>
+         <div class="card">
+           <div class="card-body text-center">
+             <p class="card-text"><b>PREPAID-007</b></p>
+             <p class="card-text"><b>PLAN : ₹219</b></p>
+             <p class="card-text">VALIDITY : 28days</p>
+             <p class="card-text">BENEFITS : 1GB/Day</p>
+             <p class="card-text">CALLING : UNLIMITED</p>
+             <p class="card-text">SMS : 100/day</p>
+             <a (click)="PrepaidButton7()" class="btn btn-info">BUY PLAN</a>
+           </div>
+         </div>
+         <div class="card bg-info">
+           <div class="card-body text-center">
+             <p class="card-text"><b>PREPAID-008</b></p>
+             <p class="card-text"><b>PLAN : ₹249</b></p>
+             <p class="card-text">VALIDITY : 28days</p>
+             <p class="card-text">BENEFITS : 1GB/Day</p>
+             <p class="card-text">CALLING : UNLIMITED</p>
+             <p class="card-text">SMS : 100/Day</p>
+             <a (click)="PrepaidButton8()" class="btn btn-light">BUY PLAN</a>
+           </div>
+         </div>  
+       </div>
+       <br><br>
+       <div class="card-deck">
+         <div class="card bg-info">
+             <div class="card-body text-center">
+               <p class="card-text"><b>PREPAID-009</b></p>
+               <p class="card-text"><b>PLAN : ₹279</b></p>
+               <p class="card-text">VALIDITY : 28days</p>
+               <p class="card-text">BENEFITS : 1.5GB/Day</p>
+               <p class="card-text">CALLING :UNLIMITED</p>
+               <p class="card-text">SMS : 100/Day</p>
+                <a (click)="PrepaidButton9()" class="btn btn-light">BUY PLAN</a>
+             </div>
+           </div>
+           <div class="card">
+             <div class="card-body text-center">
+               <p class="card-text"><b>PREPAID-010</b></p>
+               <p class="card-text"><b>PLAN : ₹298</b></p>
+               <p class="card-text">VALIDITY : 28days</p>
+               <p class="card-text">BENEFITS : 2GB/Day</p>
+               <p class="card-text">CALLING : UNLIMITED</p>
+               <p class="card-text">SMS : 100/Day</p>
+               <a (click)="PrepaidButton10()" class="btn btn-info">BUY PLAN</a>
+             </div>
+           </div>
+           <div class="card bg-info">
+             <div class="card-body text-center">
+               <p class="card-text"><b>PREPAID-011</b></p>
+               <p class="card-text"><b>PLAN : ₹349</b></p>
+               <p class="card-text">VALIDITY : 28days</p>
+               <p class="card-text">BENEFITS : 2GB/Day</p>
+               <p class="card-text">CALLING : UNLIMITED</p>
+               <p class="card-text">SMS : 100/Day</p>
+               <a (click)="PrepaidButton11()" class="btn btn-info">BUY PLAN</a>
+             </div>
+           </div>
+           <div class="card">
+             <div class="card-body text-center">
+               <p class="card-text"><b>PREPAID-012</b></p>
+               <p class="card-text"><b>PLAN : ₹379</b></p>
+               <p class="card-text">VALIDITY : 84days</p>
+               <p class="card-text">BENEFITS : 6GB</p>
+               <p class="card-text">CALLING : UNLIMITED</p>
+               <p class="card-text">SMS : 900</p>
+               <a (click)="PrepaidButton12()" class="btn btn-info">BUY PLAN</a>
+             </div>
+           </div>  
+         </div>
+         <br><br>
+       <div class="card-deck">
+         <div class="card">
+             <div class="card-body text-center">
+               <p class="card-text"><b>PREPAID-013</b></p>
+               <p class="card-text"><b>PLAN : ₹398</b></p>
+               <p class="card-text">VALIDITY : 28days</p>
+               <p class="card-text">BENEFITS : 3GB/Day</p>
+               <p class="card-text">CALLING :UNLIMITED</p>
+               <p class="card-text">SMS : 100/Day</p>
+                <a (click)="PrepaidButton13()" class="btn btn-info">BUY PLAN</a>
+             </div>
+           </div>
+           <div class="card bg-info">
+             <div class="card-body text-center">
+               <p class="card-text"><b>PREPAID-014</b></p>
+               <p class="card-text"><b>PLAN : ₹399</b></p>
+               <p class="card-text">VALIDITY : 56days</p>
+               <p class="card-text">BENEFITS : 1.5GB/Day</p>
+               <p class="card-text">CALLING : UNLIMITED</p>
+               <p class="card-text">SMS : 100/Day</p>
+               <a (click)="PrepaidButton14()" class="btn btn-light">BUY PLAN</a>
+             </div>
+           </div>
+           <div class="card">
+             <div class="card-body text-center">
+               <p class="card-text"><b>PREPAID-015</b></p>
+               <p class="card-text"><b>PLAN : ₹449</b></p>
+               <p class="card-text">VALIDITY : 56days</p>
+               <p class="card-text">BENEFITS : 2GB/Day</p>
+               <p class="card-text">CALLING : UNLIMITED</p>
+               <p class="card-text">SMS : 100/Day</p>
+               <a (click)="PrepaidButton15()" class="btn btn-info">BUY PLAN</a>
+             </div>
+           </div>
+           <div class="card bg-info">
+             <div class="card-body text-center">
+               <p class="card-text"><b>PREPAID-016</b></p>
+               <p class="card-text"><b>PLAN : ₹{{prepaid16}}</b></p>
+               <p class="card-text">VALIDITY : 56days</p>
+               <p class="card-text">BENEFITS : 3GB/Day</p>
+               <p class="card-text">CALLING : UNLIMITED</p>
+               <p class="card-text">SMS : 100/Day</p>
+               <a (click)="PrepaidButton16()" class="btn btn-light">BUY PLAN</a>
+             </div>
+           </div>  
+         </div>
+         <br><br><br>
+     </div>
+     <br><br><br>
+<h2 style="text-align: center;">POST-PAID</h2>
+<br><br>
+<div class="container">
+   <div class="card-deck">
+    <div class="card bg-info">
+      <div class="card-body text-center">
+        <p class="card-text"><b>PO001</b></p>
+        <p class="card-text">DATA : 125GB</p>
+        <p class="card-text">VALIDITY: 365 DAYS</p>
+        <p class="card-text">CALLING : UNLIMITED</p>
+        <p class="card-text">SMS : UNLIMITED</p>
+        <p class="card-text">At ₹749</p>
+         <a (click)="PostpaidButton1()" class="btn btn-light">BUY PLAN</a>
+      </div>
+    </div>
+    <div class="card">
+        <div class="card-body text-center">
+            <p class="card-text"><b>PO002</b></p>
+            <p class="card-text">DATA : 150GB</p>
+            <p class="card-text">VALIDITY: 365 DAYS</p>
+            <p class="card-text">CALLING : UNLIMITED</p>
+            <p class="card-text">SMS : UNLIMITED</p>
+            <p class="card-text">At ₹999</p>
+             <a (click)="PostpaidButton2()" class="btn btn-info ">BUY PLAN</a>
+          </div>
+    </div>
+    <div class="card bg-info">
+        <div class="card-body text-center">
+            <p class="card-text"><b>PO003</b></p>
+            <p class="card-text">DATA : 200GB</p>
+            <p class="card-text">VALIDITY: 365 DAYS</p>
+            <p class="card-text">CALLING : UNLIMITED</p>
+            <p class="card-text">SMS : UNLIMITED</p>
+            <p class="card-text">At ₹1099</p>
+             <a (click)="PostpaidButton3()" class="btn btn-light">BUY PLAN</a>
+          </div>
+    </div>
+    <div class="card ">
+      
+        <div class="card-body text-center">
+            <p class="card-text"><b>PO004</b></p>
+            <p class="card-text">DATA : 50GB</p>
+            <p class="card-text">VALIDITY: 30 DAYS</p>
+            <p class="card-text">CALLING : 1000 MINUTES</p>
+            <p class="card-text">SMS : UNLIMITED</p>
+            <p class="card-text">At ₹210</p>
+             <a (click)="PostpaidButton4()" class="btn btn-info">BUY PLAN</a>
+          </div>
+      </div>  
+   </div>
+  <br><br>
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body text-center">
+		      	<p class="card-text"><b>PO005</b></p>
+            <p class="card-text">DATA : 75GB</p>
+            <p class="card-text">VALIDITY: 30 DAYS</p>
+            <p class="card-text">CALLING : 1000 MINUTES</p>
+            <p class="card-text">SMS : UNLIMITED</p>
+            <p class="card-text">At ₹300</p>
+            <a (click)="PostpaidButton5()" class="btn btn-info">BUY PLAN</a>
+      </div>
+    </div>
+    <div class="card bg-info">
+      <div class="card-body text-center">
+			    <p class="card-text"><b>PO006</b></p>
+			    <p class="card-text">DATA : 120GB</p>
+            <p class="card-text">VALIDITY: 30 DAYS</p>
+            <p class="card-text">CALLING : 1000 MINUTES</p>
+            <p class="card-text">SMS : UNLIMITED</p>
+            <p class="card-text">At ₹400</p>
+            <a (click)="PostpaidButton6()" class="btn btn-light">BUY PLAN</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body text-center">
+			<p class="card-text"><b>PO007</b></p>
+			<p class="card-text">DATA : 120GB</p>
+            <p class="card-text">VALIDITY: 30 DAYS</p>
+            <p class="card-text">CALLING : 1000 MINUTES</p>
+            <p class="card-text">SMS : UNLIMITED</p>
+            <p class="card-text">At ₹400</p>
+            <a (click)="PostpaidButton7()" class="btn btn-info">BUY PLAN</a>
+      </div>
+    </div>
+    <div class="card bg-info">
+      <div class="card-body text-center">
+			<p class="card-text"><b>PO008</b></p>
+			<p class="card-text">DATA : 150GB</p>
+            <p class="card-text">VALIDITY: 30 DAYS</p>
+            <p class="card-text">CALLING : 1000 MINUTES</p>
+            <p class="card-text">SMS : UNLIMITED</p>
+            <p class="card-text">At ₹550</p>
+            <a (click)="PostpaidButton8()" class="btn btn-light">BUY PLAN</a>
+      </div>
+    </div>  
+  </div>
+  <br><br><br>
+</div>
+<h2 style="text-align: center;">BROADBAND</h2>
+<br><br>
+<div class="container">
+  <div class="card-deck">
+           <div class="card bg-info">
+           <div class="card-body text-center">
+               <p class="card-text"><b>BB001</b></p>
+               <p class="card-text">INTERNET SPEED: 150Mbps</p>
+               <p class="card-text">MONTHLY DATA: 1000GB</p>
+               <p class="card-text">POST FPU SPEED: 1Mbps</p>
+               <p class="card-text">At ₹1075</p>
+               <a (click)="BroadbandButton1()" class="btn btn-light">BUY PLAN</a>
+           </div>
+           </div>
+           <div class="card">
+           <div class="card-body text-center">
+               <p class="card-text"><b>BB002</b></p>
+               <p class="card-text">INTERNET SPEED: 350Mbps</p>
+               <p class="card-text">MONTHLY DATA: 2000GB</p>
+               <p class="card-text">POST FPU SPEED: 2Mbps</p>
+               <p class="card-text">At ₹1999</p>
+               <a (click)="BroadbandButton2()" class="btn btn-info">BUY PLAN</a>
+           </div>
+           </div>
+           <div class="card bg-info">
+           <div class="card-body text-center">
+               <p class="card-text"><b>BB003</b></p>
+               <p class="card-text">INTERNET SPEED: 1Gbps</p>
+               <p class="card-text">MONTHLY DATA: 3000GB</p>
+               <p class="card-text">POST FPU SPEED: 2Mbps</p>
+               <p class="card-text">At ₹2999</p>
+               <a (click)="BroadbandButton3()" class="btn btn-light">BUY PLAN</a>
+           </div>
+           </div>
+        </div>
+     <br><br>
+     <div class="card-deck">
+       <div class="card">
+       <div class="card-body text-center">
+           <p class="card-text"><b>BB004</b></p>
+           <p class="card-text">INTERNET SPEED: 150Mbps</p>
+           <p class="card-text">MONTHLY DATA: 500GB</p>
+           <p class="card-text">POST FPU SPEED: 1Mbps</p>
+           <p class="card-text">At ₹777</p>
+           <a (click)="BroadbandButton4()" class="btn btn-info">BUY PLAN</a>
+       </div>
+       </div>
+       <div class="card bg-info">
+       <div class="card-body text-center">
+           <p class="card-text"><b>BB005</b></p>
+           <p class="card-text">INTERNET SPEED: 350Mbps</p>
+           <p class="card-text">MONTHLY DATA: 1000GB</p>
+           <p class="card-text">POST FPU SPEED: 2Mbps</p>
+           <p class="card-text">At ₹1055</p>
+           <a (click)="BroadbandButton5()" class="btn btn-light">BUY PLAN</a>
+       </div>
+       </div>
+       <div class="card">
+       <div class="card-body text-center">
+           <p class="card-text"><b>BB006</b></p>
+           <p class="card-text">INTERNET SPEED: 2Gbps</p>
+           <p class="card-text">MONTHLY DATA: 5000GB</p>
+           <p class="card-text">POST FPU SPEED: 2Mbps</p>
+           <p class="card-text">At ₹3999</p>
+           <a (click)="BroadbandButton6()" class="btn btn-info">BUY PLAN</a>
+       </div>
+       </div>
+ </div>
+ <br><br><br>
+</div>
+     <app-footer></app-footer>
+    </body>

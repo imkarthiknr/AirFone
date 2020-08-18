@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <div>
   <nav class="navbar navbar-expand-lg navbar-dark primary-color">
       <a class="navbar-brand" href="#"><i class="fa fa-mobile-phone" style="font-size:24px;margin-right:10px;"></i>AirFone</a>
@@ -8,23 +11,26 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="#" routerLinkActive="active">Plans</a>
+          <li class="nav-item other">
+            <a class="nav-link" routerLink="/Plans" routerLinkActive="active"><div>PLANS</div></a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLink="#" routerLinkActive="active">Billing</a>
+          <li class="nav-item other">
+              <a class="nav-link" routerLink="/Bill" routerLinkActive="active"><div>BILLING</div></a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLink="#" routerLinkActive="active">Support</a>
+          <li class="nav-item other">
+              <a class="nav-link" routerLink="/Help" routerLinkActive="active"><div>HELP</div></a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLink="#" routerLinkActive="active">Bill History</a>
+          <li class="nav-item other">
+              <a class="nav-link" routerLink="/History" routerLinkActive="active"><div>HISTORY</div></a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link" routerLink="#" routerLinkActive="active">Profile</a>
+          <li class="nav-item" class="profile">
+              <a class="nav-link" routerLink="/Profile" routerLinkActive="active"><div>PROFILE</div></a>
           </li>
+          <li class="nav-item" class="other">
+            <a class="nav-link" (ngSubmit)="logout()" routerLink="/Login" routerLinkActive="active"><div>LOG OUT</div></a>
+        </li>
         </ul>
       </div>
     </nav>

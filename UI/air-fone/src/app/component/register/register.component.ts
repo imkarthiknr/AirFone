@@ -17,57 +17,69 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  title = 'register';
+  CName='';
+  DOB='';
+  Email='';
+  Pwd='';
+  Occupation='';
+  AadharNumber='';
+  HouseNo='';
+  Street='';
+  City='';
+  State='';
+  pincode='';
+  Type_Cust='';
+  data=Array();
+  result;
+  result1;
+  result2;
+  result3;
+  result4;
+  result5;
+  result6;
+  result7;
+  result8;
+  result9;
+  result11;
+  count=0;
+  constructor(private http:HttpClient)
+  {
+    this.data=new Array<any>();
+  }
 
-  registerForm: FormGroup;
-  
   ngOnInit(): void {
- 
-
-  this.registerForm=new FormGroup({
-      
-    CName:new FormControl(null,Validators.required),
-    DOB:new FormControl(null,Validators.required),
-    Email: new FormControl(null,[Validators.required,Validators.email]),
-    Pwd: new FormControl(null,[Validators.required,Validators.minLength(4),Validators.pattern("/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/")]),
-    AdhaarNumber:new FormControl(null,[Validators.required]),
-    Occupation: new FormControl(null,[Validators.required]),
-    Houseno : new FormControl(null,[Validators.required]),
-    Street :new FormControl(null,[Validators.required]),
-    City : new FormControl(null,[Validators.required]),
-    State : new FormControl(null,[Validators.required]),
-    pincode : new FormControl(null,[Validators.required]),
-    Type_Cust :new FormControl(null,[Validators.required]), 	
-    
-
-  });
-
-
   }
-  constructor(private http:HttpClient, private customer:CustomerService){  
-  }
-  onsubmit(){
+
+  selectedOption: string;
+  printedOption: string;
+
+  options = [
+    { name: "prepaid", value: "prepaid" },
+    { name: "postpaid", value: "postpaid" },
+    { name:"broadband", value:"broadband"}
+  ]
+//sleep function used for sleep
+  sleep = ( ms ) => {
+    const end = +(new Date()) + ms;
+    while( +(new Date()) < end ){ } 
+}
+
+  register()
+  {
+    this.Type_Cust = this.selectedOption;
+    //console.log(this.printedOption);
+    if (this.CName=='' || this.DOB=='' || this.Email=='' || this.Pwd=='' || this.AadharNumber=='' || this.Occupation=='' || this.HouseNo=='' || this.Street=='' || this.City=='' || this.State=='' || this.pincode=='' || this.Type_Cust=='')
     {
-     
-      if (this.registerForm.get('CName').value !== "" && this.registerForm.get('Email').value !== "" && this.registerForm.get('Pwd').value !== "" && this.registerForm.get('AadharNumber').value !== "" && this.registerForm.get('Type_Cast').value !== "")
-      {
-        this.customer.sendPostRequest(this.registerForm.get('Cname').value, this.registerForm.get('DOB').value,this.registerForm.get('Email').value, this.registerForm.get('Pwd').value, this.registerForm.get('AadharNumber').value, this.registerForm.get('Occupation').value, this.registerForm.get('Houseno').value, this.registerForm.get('Street').value(), this.registerForm.get('City').value, this.registerForm.get('State').value, this.registerForm.get('pincode').value, this.registerForm.get('Type_Cast').value )
-          .subscribe(response=>{
-            console.log(response);
-            let jsonObj = JSON.parse(JSON.stringify(response));
-            if(jsonObj.updation === "success"){
-              alert("Successfully Updated");
-            }
-      });
-      }
-      else {
-        alert("Enter proper details");
-      }
-
-  
-  
-
-}
-
-}
+      alert("Please enter valid details");
+    }
+    else
+    {
+    let url="http://127.0.0.1:4003/register";
+        this.http.post(url,{CName:this.CName,DOB:this.DOB,Email:this.Email,Pwd:this.Pwd,AadharNumber:this.AadharNumber,Occupation:this.Occupation,HouseNo:this.HouseNo,Street:this.Street,City:this.City,State:this.State,pincode:this.pincode,Type_Cust:this.Type_Cust}).toPromise().then((data:any)=>{console.log(data)
+        console.log(JSON.stringify(data.json))
+        alert("Registered Successfully!!! Check the mail to get your mobile number")
+        //this.result=JSON.stringify(data.json.name)
+        })
+    }
+  }
 }
