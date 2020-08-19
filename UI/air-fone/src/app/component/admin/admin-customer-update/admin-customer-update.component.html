@@ -1,4 +1,6 @@
+<!--header-->
 <app-admin-header></app-admin-header>
+<!--sidebar-->
 <app-admin-menu></app-admin-menu>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +14,9 @@
 </head>
 <body>
 <h1>Update Customer Details</h1>
+<!--container start-->
 <div class="container">
+  <!--update form start-->
 <form  class="was-validated" *ngFor="let user of users" [formGroup]="updateform">
 
   <br><br>

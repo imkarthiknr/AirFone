@@ -16,7 +16,6 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { AdsComponent } from './component/ads/ads.component';
 import { CustDetailComponent } from './component/cust-detail/cust-detail.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
-//import { CarouselModule } from '@bit/valor-software.ngx-bootstrap.carousel';
 import { Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BillComponent } from './component/bill/bill.component';
@@ -40,6 +39,7 @@ import { AdminProfileComponent } from './component/admin/admin-profile/admin-pro
 import { AdminComplaintRespondComponent } from './component/admin/admin-complaint-respond/admin-complaint-respond.component';
 import { AdminCustomerUpdateComponent } from './component/admin/admin-customer-update/admin-customer-update.component';
 import { AdminBillComponent } from './component/admin/admin-bill/admin-bill.component';
+import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
 @NgModule({
   declarations: [
     AppComponent, 
@@ -56,7 +56,23 @@ import { AdminBillComponent } from './component/admin/admin-bill/admin-bill.comp
     PlansComponent,
     PrepaidComponent, 
     PostpaidComponent, 
-    BroadbandComponent, PaymentComponent, HelpComponent, SupportComponent, FeedbackComponent, BillhistoryComponent, AdminMenuComponent, AdminHeaderComponent, NotfoundComponent, AdminDashboardComponent, AdminComplaintComponent, AdminCustomerDetailsComponent, AdminLoginComponent, AdminProfileComponent, AdminComplaintRespondComponent, AdminCustomerUpdateComponent, AdminBillComponent
+    BroadbandComponent, 
+    PaymentComponent, 
+    HelpComponent, 
+    SupportComponent, 
+    FeedbackComponent, 
+    BillhistoryComponent, 
+    AdminMenuComponent, 
+    AdminHeaderComponent, 
+    NotfoundComponent, 
+    AdminDashboardComponent,
+    AdminComplaintComponent, 
+    AdminCustomerDetailsComponent, 
+    AdminLoginComponent, 
+    AdminProfileComponent, 
+    AdminComplaintRespondComponent, 
+    AdminCustomerUpdateComponent, 
+    AdminBillComponent, ForgotpasswordComponent
   ],
   imports: [  
     BrowserModule,

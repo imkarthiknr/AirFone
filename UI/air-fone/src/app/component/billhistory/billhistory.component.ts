@@ -1,42 +1,37 @@
+import { CustomerbillService } from '../../service/customerbill.service';
+import { CustomerBill } from './../../interface/customerbill';
 import { Component, OnInit } from '@angular/core';
-import { History } from '../../interface/history';
-import { Subscription } from 'rxjs';
-import { FetchHistoryService } from '../../service/fetch-history.service' 
+import {FormGroup,FormControl,Validators} from '@angular/forms';
+import { MobilenoService } from './../../service/mobileno.service';
 @Component({
   selector: 'app-billhistory',
   templateUrl: './billhistory.component.html',
   styleUrls: ['./billhistory.component.css']
 })
 export class BillhistoryComponent implements OnInit {
-  phno;
-  list=new Array<History>();
-  private subscp= new Subscription;
-    constructor(private fetch : FetchHistoryService)
-    {
-    }
+  public customerbillform;
+  isshow=true;
+  billdetail:CustomerBill[]=[]
+  Mobileno;
+  constructor(private customerbill:CustomerbillService, private mobile:MobilenoService) { }
   
-    ngOnInit(): void {
-    }
-  
-  
-  history()
-  {
-    this.fetch
-    .historyreq(this.phno)
-    .subscribe( response=>{
-      this.list=response["billing"].map(item=>{
-        return new History(
-          item.billing_id,
-          item.MobileNo,
-          item.Benefits,
-          item.price,
-          item.start,
-          item.end
-        );
-      });
-  
-    });
+  ngOnInit(): void {
+    this.customerbillform=new FormGroup({
+      mobilenumber:new FormControl('',Validators.required)
+    })
+    this.Mobileno = this.mobile.PrintMobileNo()
+    console.log(this.Mobileno)
   }
+
+  onSubmit(){
+    this.isshow=false;
+    const val=this.customerbillform.value;
+    this.customerbill.getcustomerbilldata(val.mobilenumber).subscribe((response)=>{this.billdetail=response.billing;
+      console.log(response);
+    console.log(this.billdetail);})
+
+  }
+
   
 
 }

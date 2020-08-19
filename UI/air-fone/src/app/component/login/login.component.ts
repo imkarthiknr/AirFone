@@ -37,4 +37,11 @@ export class LoginComponent implements OnInit {
         }
     
     }
+
+    forgetpassword()
+    {
+      const val = this.loginform.value;
+      this.router.navigate(['/Login/ForgotPassword'],{queryParams:{mobilenumber:val.m_number}});
+    }
   }
+

@@ -1,3 +1,4 @@
+/*importing necessary service, and modules*/
 import { Getuser } from '../../../interface/admin/admingetcustomer';
 import { AdmingetuserService } from '../../../service/admin/admingetuser/admingetuser.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class AdminCustomerDetailsComponent implements OnInit {
 
-  
+  /*declaration*/
   data:any;
   users:Getuser[]=[];
   userslist="users";
@@ -22,7 +23,7 @@ export class AdminCustomerDetailsComponent implements OnInit {
   constructor(private http:HttpClient,private getuser:AdmingetuserService,private route:Router) { }
 
   
-  
+  /*oninit function to get customer data*/
   ngOnInit(): void {
     this.getuser.getuserdata().subscribe((response)=>{this.users=response.user;
       console.log(response);})
@@ -37,7 +38,8 @@ export class AdminCustomerDetailsComponent implements OnInit {
     if(confirm("Are you Sure?")){
       const url=" http://127.0.0.1:4004/customerdelete/"+mobileno;
       return this.http.delete(url, {headers:this.headers}).toPromise().then((data)=>{console.log(data);
-        this.ngOnInit();this.route.navigate(['/customerdetails']);
+        this.ngOnInit();this.route.navigate(['/AdminCustomerDetails']);
+
         
       })
       

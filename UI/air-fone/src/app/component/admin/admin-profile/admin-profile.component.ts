@@ -1,3 +1,4 @@
+/*importing necessary service, and modules*/
 import { HttpClient } from '@angular/common/http';
 import { Admin } from '../../../interface/admin/admin';
 import { AdminprofileService } from '../../../service/admin/adminprofile/adminprofile.service';
@@ -11,10 +12,12 @@ import {FormGroup,FormControl,Validators} from '@angular/forms';
 })
 export class AdminProfileComponent implements OnInit {
 
+  /*declaration*/
   public adminform;
   admindetail:Admin[]=[];
   constructor(private http:HttpClient,private admin:AdminprofileService) { }
 
+  /*form validation,fetching admin credential data*/
   ngOnInit(): void {
     this.adminform=new FormGroup({
       adminid:new FormControl('',Validators.required),
@@ -26,10 +29,11 @@ export class AdminProfileComponent implements OnInit {
       console.log(this.admindetail)})
   }
 
+  /*onsubmit function to pass the updated customer*/
   onSubmit(){
     const val = this.adminform.value;
     let url="http://127.0.0.1:4004/adminupdate/"+this.adminform.get('adminid').value;
     this.http.put(url,{adminname:this.adminform.get('auname').value,adminpassword:this.adminform.get('apassword').value}).toPromise().then((data:any)=>{console.log(data);})
-
+    alert("Profile Details Updated!!")
   }
 }

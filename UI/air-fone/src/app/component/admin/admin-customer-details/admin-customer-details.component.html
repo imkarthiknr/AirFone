@@ -1,5 +1,8 @@
+<!--header-->
 <app-admin-header></app-admin-header>
+<!--sidenavbar-->
 <app-admin-menu></app-admin-menu>
+<!--customer details table start-->
 <body>
     <h1>Customer Details</h1>
   <table class="table table-striped table-bordered table-responsive-md">
@@ -16,8 +19,8 @@
       <td>{{cust.uname}}</td>
       <td>{{cust.upassword}}</td>
       <td>{{cust.typecust}}</td>
-      <td (click)="deletecustomer(cust.mobileno)"><a routerLink="/customerdetails" routerLinkActive="active">Delete</a></td>
-      <td [routerLink]="['/updatecustomer',cust.mobileno]"><a routerLink="" routerLinkActive="active">Update</a></td>
+      <td (click)="deletecustomer(cust.mobileno)"><a routerLink="/AdminCustomerDetails" routerLinkActive="active">Delete</a></td>
+      <td [routerLink]="['/AdminCustomerUpdate',cust.mobileno]"><a  routerLinkActive="active">Update</a></td>
       
     </tr>
   </table>

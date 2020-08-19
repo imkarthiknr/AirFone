@@ -1,5 +1,8 @@
+<!--header-->
 <app-admin-header></app-admin-header>
+<!--sidenavbar-->
 <app-admin-menu></app-admin-menu>
+<!--Customer details table start-->
 <body>
     <h1>Customer Complaint Details</h1>
   <table class="table table-striped table-bordered table-responsive-md">
@@ -19,7 +22,7 @@
       <td>{{complaint.description}}</td>
       <td>{{complaint.assignedperson}}</td>
       <td>{{complaint.mobileno}}</td>
-      <td [routerLink]="['/mail',complaint.ticket_id]"><a routerLink="" routerLinkActive="active">Not Replied</a></td>
+      <td [routerLink]="['/AdminComplaintRespond',complaint.ticket_id]"><a  routerLinkActive="active">Respond</a></td>
       
     </tr>
   </table>

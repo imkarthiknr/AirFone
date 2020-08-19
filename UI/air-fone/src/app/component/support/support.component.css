@@ -31,7 +31,6 @@ h1{
 }
 
 .signin-content {
-    margin-top: 100px;
     padding-top: 30px;
     padding-bottom: 67px; }
       
@@ -130,7 +129,7 @@ label{
 
 textarea{
     vertical-align: top;
-    margin-left: 45px;
+    margin-left: 27px;
 }
 
 .name{

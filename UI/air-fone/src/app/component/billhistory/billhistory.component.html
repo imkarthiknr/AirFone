@@ -1,52 +1,44 @@
 <app-header></app-header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</head>
 <body>
-    <div class="container">
-        <div class="signin-content">
-        <div class="signin-form">
-            <form>
-                <div class="form-group">
-                    <h1>Billing history</h1>
-                    <br>
-                </div>
-                
-                <!--<label>Enter your number</label>-->
-                <input type="text" placeholder="Enter mobile number" name="phno" [(ngModel)]="phno">
-                <br>
-                <br>
-                <!--<label>Name:</label>
-                <input class="name" type="text" placeholder="Enter Name" name="user" [(ngModel)]="user">
-                <br>
-                <br>
-                <label>Description:</label>
-                <textarea cols="46" rows="3" placeholder="Type your message...." name="description" [(ngModel)]="description"></textarea>
-                <br><br>-->
-                <div class="form-group form-button">
-                    <button class="form-submit" name="submit" (click)="history()">Submit</button>
-                </div>
-            </form>
-    
-        </div>
-        </div>
-    </div>
-    <div class="form-group">
-    <table border=1px solid black>
-        <tr>
-            <th>Billing ID</th>
-            <th>Mobile number</th>
-            <th>Benefits</th>
-            <th>Price</th>
-            <th>Recharge date</th>
-            <th>Validity</th>
-        </tr>
-        <tr *ngFor="let l of list">
-            <td>{{l.billing_id}}</td>
-            <td>{{l.MobileNo}}</td>
-            <td>{{l.Benefits}}</td>
-            <td>{{l.price}}</td>
-            <td>{{l.start}}</td>
-            <td>{{l.end}}</td>
-        </tr>
-    </table>
-    </div>
-    </body>
-<app-footer></app-footer>
+<h1>Customer Bill History</h1>
+<div class="container">
+<form  class="was-validated" [formGroup]="customerbillform" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="customer Mobile Number">Customer Mobile Number:</label>
+        <input type="text" class="form-control" id="startdate" formControlName="mobilenumber" [(ngModel)]=Mobileno required disabled>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<br>
+<table [hidden]="isshow" class="table table-striped table-bordered table-responsive-md">
+  <tr>
+    <th>Bill Id</th>
+    <th>Mobile No</th>
+    <th>Benefits</th>
+    <th>Price</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </tr>
+  <tr *ngFor="let bill of billdetail">
+    <td>{{bill.Billing_id}}</td>
+    <td>{{bill.MobileNo}}</td>
+    <td>{{bill.Benefits}}</td>
+    <td>{{bill.price}}</td>
+    <td>{{bill.start}}</td>
+    <td>{{bill.end}}</td>
+  </tr>
+</table>
+
+</body>
+</html>

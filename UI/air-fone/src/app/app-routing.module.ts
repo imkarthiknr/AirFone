@@ -1,3 +1,12 @@
+import { ForgotpasswordComponent } from './component/forgotpassword/forgotpassword.component';
+import { AdminBillComponent } from './component/admin/admin-bill/admin-bill.component';
+import { AdminComplaintRespondComponent } from './component/admin/admin-complaint-respond/admin-complaint-respond.component';
+import { AdminComplaintComponent } from './component/admin/admin-complaint/admin-complaint.component';
+import { AdminProfileComponent } from './component/admin/admin-profile/admin-profile.component';
+import { AdminLoginComponent } from './component/admin/admin-login/admin-login.component';
+import { AdminCustomerUpdateComponent } from './component/admin/admin-customer-update/admin-customer-update.component';
+import { AdminCustomerDetailsComponent } from './component/admin/admin-customer-details/admin-customer-details.component';
+import { AdminDashboardComponent } from './component/admin/admin-dashboard/admin-dashboard.component';
 import { NotfoundComponent } from './component/notfound/notfound.component';
 import { BillhistoryComponent } from './component/billhistory/billhistory.component';
 import { FeedbackComponent } from './component/feedback/feedback.component';
@@ -21,10 +30,12 @@ import { HomeComponent } from './component/home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'Dashboard', component: DashboardComponent},
   {path: 'Login', component: LoginComponent},
+  {path: 'Login/ForgetPassword', component: ForgotpasswordComponent},
   {path: 'Register', component: RegisterComponent},
   {path: 'Plans', component: PlansComponent},
   {path: 'Bill', component: BillComponent},
@@ -37,7 +48,16 @@ const routes: Routes = [
   {path: 'Feedback', component: FeedbackComponent},
   {path: 'History', component: BillhistoryComponent},
   {path:'Feedback',component: FeedbackComponent },
+  {path:'AdminLogin',component: AdminLoginComponent },
+  {path:'AdminDashboard',component: AdminDashboardComponent },
+  {path:'AdminCustomerDetails',component: AdminCustomerDetailsComponent },
+  {path:'AdminCustomerUpdate/:mobileno',component: AdminCustomerUpdateComponent },
+  {path:'AdminBill',component: AdminBillComponent },
+  {path:'AdminComplaint',component: AdminComplaintComponent },
+  {path:'AdminComplaintRespond/:id',component: AdminComplaintRespondComponent },
+  {path:'AdminProfile',component: AdminProfileComponent },
   {path:'**',component: NotfoundComponent }
+  
 ];
  
 @NgModule({

@@ -1,8 +1,10 @@
+#import statements
 from flask import Flask, request, jsonify, redirect
 from flask_restful import Resource, Api
 from flaskext.mysql import MySQL
 from flask_cors import CORS
 from random import randint
+import random
 import sys
 import datetime
 import smtplib
@@ -11,13 +13,13 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import timedelta
 mysql = MySQL()
-app = Flask(__name__)
+app = Flask(_name_)
 CORS(app)
 
-
+#port number and d
 port = 4003
 env = "airfone"
-if __name__ == "__main__":
+if _name_ == "_main_":
     if len(sys.argv) > 1:
         env = sys.argv[1]
         print("env=" + env)
@@ -306,7 +308,7 @@ class BillingBroadband(Resource):
                 return {"phone number not registered":phno}
         else:
             return {"not a broadband customer":phno}
-
+#class for help
 class Help(Resource):
     def post(self,Email):
         conn = mysql.connect()
@@ -314,10 +316,10 @@ class Help(Resource):
         data = request.get_json()
         #selecting client randomly
         list_person=['Ram','Sita','Karthik','Hayath','Jeethander','abc','Rupika','Rahim','John']
-        person=random.choice(list_person)
+        person= random.choice(list_person)
         #selecting number randomly
         list_no=['9999999999','9877898899','9898887899','9798789879']
-        n=random.choice(list_no)
+        n= random.choice(list_no)
         #generating ticket randomly
         range_start = 5**(5-1)
         range_end = (5**5)-1
@@ -356,7 +358,7 @@ class Help(Resource):
                 text=m.as_string()
                 server_ssl = smtplib.SMTP_SSL("smtp.gmail.com", 465)
                 server_ssl.ehlo() # optional, called by login()
-                server_ssl.login("sender_email", "password")
+                server_ssl.login("hayath.py0@gmail.com", "HayathT#00")
                 # ssl server doesn't support or need tls, so don't call server_ssl.starttls()
                 server_ssl.sendmail("sender_email",str(Email), text) #sending email to the customer with ticket and client assign
                 #server_ssl.quit()
@@ -368,7 +370,7 @@ class Help(Resource):
             return "email is not registered"
 
         return {'department': None}, 404
-
+#class for payment history
 class PaymentHistory(Resource):
     def post(self):
         data = request.get_json()
@@ -385,6 +387,7 @@ class PaymentHistory(Resource):
             return response, 203
         return 404
 
+#class for Bill history
 class History(Resource):
 	def get(self,phno):
 		conn = mysql.connect()
@@ -403,8 +406,48 @@ class History(Resource):
 			return d
 		return {"billing":"Notfound"}
 
+#class for forget password
+class ForgetPassword(Resource):
+    def get(self,email):
+        data=request.get_json()
+        conn=mysql.connect()
+        cursor=conn.cursor()
+        select_query="select Email,Pwd from customer where Email=%s"
+        query = (email,)
+        cursor.execute(select_query,query)
+        rows=cursor.fetchall()
+        email_id=""
+        password=""
+        for row in rows:
+            email_id=row[0]
+            password=row[1]
+        from_email = "hayath.py0@gmail.com"
+        from_password = "HayathT#00"
+        to_email = email
+
+        subject = "Forgot Password"
+        message = "Hey Whatsapp, as per your request from this mail id<strong>%s</strong> Your Password is <strong>%s</strong> Thanks to Use our service." % (
+        email_id, password)
+
+        msg = MIMEText(message, 'html')
+        msg["Subject"] = subject
+        msg["To"] = to_email
+        msg["From"] = from_email
+
+        gmail = smtplib.SMTP('smtp.gmail.com', 587)
+        gmail.ehlo()
+        gmail.starttls()
+        gmail.login(from_email, from_password)
+        gmail.send_message(msg)
+        if len(rows)>0:
+            return {"result":"success"}
+        else:
+            invalid={'not-found':'invalid'}
+            return invalid
 
 
+#api connection
+api.add_resource(ForgetPassword,'/email/<string:email>')
 api.add_resource(History,'/historys/<string:phno>')
 api.add_resource(Login, '/login')
 api.add_resource(Register, '/register')
@@ -412,4 +455,7 @@ api.add_resource(BillingPrepaid,'/billings/<string:phno>/<string:plan>')
 api.add_resource(BillingPostpaid,'/billingspostpaids/<string:phno>/<string:plan>')
 api.add_resource(BillingBroadband,'/billingsbroadbands/<string:phno>/<string:plan>')
 api.add_resource(PaymentHistory, '/payment')
+api.add_resource(Help,'/helps/<string:Email>')
+
+#api port connection
 app.run(port=port, debug=True)

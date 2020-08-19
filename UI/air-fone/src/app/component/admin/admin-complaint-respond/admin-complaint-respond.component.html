@@ -1,5 +1,7 @@
+<!--header-->
 <app-admin-header></app-admin-header>
-<app-admin-menu></app-nadmin-menu>
+<!--sidenavbar-->
+<app-admin-menu></app-admin-menu>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +14,9 @@
 </head>
 <body>
 <h1>Send Response</h1>
+<!--container start-->
 <div class="container">
 <form  class="was-validated" *ngFor="let complaint of single_complaint" [formGroup]="mailform">
-
-  <br><br>
       <div class="form-group">
         <label for="ticketid">Ticket ID:</label>
         <input type="text" class="form-control" id="ticketid" [(ngModel)]=complaint.ticket_id formControlName="ticketid"  required>
@@ -52,7 +53,11 @@
         <div class="valid-feedback">Valid.</div>
         <div class="invalid-feedback">Please fill out this field.</div>
       </div>
-    <button type="submit" class="btn btn-primary" (click)="Sendmail()">Update</button>
+      <div class="form-group">
+        <label for="responsemessage">Message:</label>
+        <textarea  id="responsemessage" class="form-control" formControlName="response" required></textarea>  
+      </div>
+    <button type="submit" class="btn btn-primary" (click)="Sendmail()">Send Mail</button>
   </form>
 </div>
 

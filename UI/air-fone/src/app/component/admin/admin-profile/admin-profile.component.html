@@ -1,4 +1,6 @@
+<!--header-->
 <app-admin-header></app-admin-header>
+<!--sidebar-->
 <app-admin-menu></app-admin-menu>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +15,7 @@
 <body>
 <h1>Admin Profile</h1>
 <div class="container">
+<!--admin profile form-->
 <form  class="was-validated" *ngFor="let admin of admindetail" [formGroup]="adminform" (ngSubmit)="onSubmit()">
 
   <br><br>

@@ -1,4 +1,6 @@
+<!--header component-->
 <app-admin-header></app-admin-header>
+<!--sidenavbar-->
 <app-admin-menu></app-admin-menu>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +14,9 @@
 </head>
 <body>
 <h1>Bill Generation</h1>
+<!--container start-->
 <div class="container">
+<!--billing form-->
 <form  class="was-validated" [formGroup]="billform" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="startdate">Start Date:</label>

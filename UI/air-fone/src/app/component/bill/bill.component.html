@@ -42,25 +42,25 @@
         
         <body>
         <div>
-          <form>
+          <form [formGroup]="billForm" (ngSubmit)="recharge()">
            <h1><b>RECHARGE</b></h1>
           <br><br>
             <label for="PhoneNumber">MOBILE NUMBER</label><br>
-            <input type="text" name="phno" [(ngModel)]=Mobileno required disabled><br><br>
+            <input type="text" name="phno" class="form-control" [(ngModel)]=Mobileno required  formControlName="Mobileno1"><br><br>
         
             <label for="plan">AMOUNT </label><br>
-            <input class="name" type="text" placeholder="Enter amount from the plan" name="plan" [(ngModel)]=amount   required disabled>
+            <input class="name" type="text" class="form-control" placeholder="Enter amount from the plan" name="plan" [(ngModel)]=amount  formControlName="plan"  required disabled>
               <br><br>
             
               
             <label for="plan">TYPE </label><br>
-            <input class="name" type="text" placeholder="Enter type of tariff plan" name="description" [(ngModel)]=tariffplan  required disabled>
+            <input class="name" type="text" class="form-control" placeholder="Enter type of tariff plan" name="description" [(ngModel)]=tariffplan formControlName="description"  required >
             <br>
             <br>
             <br>
             <br>
         <p>  
-            <input type="submit" value="Submit" (click)="recharge()">
+            <input type="submit" value="Pay" >
         </p>  
           </form>
         </div>
