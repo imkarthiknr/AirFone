@@ -1,0 +1,48 @@
+# AirFone: MySQL 8 + FastAPI + Angular (nginx). `docker compose up --build` → http://localhost:8080
+services:
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: airfone
+      MYSQL_USER: airfone
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-airfone}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-airfone-root}
+    command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+    volumes:
+      - mysql-data:/var/lib/mysql
+    healthcheck:
+      test: ['CMD-SHELL', 'mysqladmin ping -h 127.0.0.1 -uairfone -p$$MYSQL_PASSWORD --silent']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  api:
+    build: ./api
+    environment:
+      DATABASE_URL: mysql+pymysql://airfone:${MYSQL_PASSWORD:-airfone}@db:3306/airfone?charset=utf8mb4
+      SECRET_KEY: ${SECRET_KEY:-change-me-in-production-please}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin12345}
+      SEED_DEMO_DATA: ${SEED_DEMO_DATA:-true}
+      WEB_BASE_URL: http://localhost:8080
+      CORS_ORIGINS: '["http://localhost:8080"]'
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  web:
+    build: ./web
+    ports:
+      - '8080:80'
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  mysql-data:
