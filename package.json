@@ -1,0 +1,23 @@
+{
+  "name": "airfone",
+  "version": "2.0.0",
+  "description": "AirFone telecom self-service portal: Angular web app + FastAPI API + MySQL.",
+  "private": true,
+  "scripts": {
+    "setup": "cd api && uv sync && uv run alembic upgrade head && uv run python -m app.seed --demo && cd ../web && npm ci",
+    "dev": "concurrently -k -n api,web -c blue,magenta \"cd api && uv run uvicorn app.main:app --reload --port 8000\" \"npm start --prefix web\"",
+    "test": "cd api && uv run pytest && cd ../web && npm test",
+    "e2e": "npm run e2e --prefix web",
+    "lint": "cd api && uv run ruff check . && uv run ruff format --check . && cd ../web && npm run format:check",
+    "docker:up": "docker compose up --build -d",
+    "docker:down": "docker compose down"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imkarthiknr/AirFone.git"
+  },
+  "license": "MIT"
+}
